@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::View('/login', 'login');
 Route::View ('/dashboard', 'dashboard');
+Route::View ('/transaksi1', 'transaksi1');
+Route::View ('/transaksi2', 'transaksi2');
+Route::View ('/transaksi3', 'transaksi3');

@@ -5,11 +5,11 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>BBM - DISHUB Kota Madiun</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="/backend/vendors/feather/feather.css">
   <link rel="stylesheet" href="/backend/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="p/backend/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/backend/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="/backend/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -19,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="backend/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="/backend/images/dishub.png" />
 </head>
 <body>
   <div class="container-scroller">
@@ -27,8 +27,8 @@
     <!-- NAVBAR  -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/backend/images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/backend/images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/backend/images/dishub-logo.png" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/backend/images/dishub-logo.png" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -52,49 +52,6 @@
               <i class="icon-bell mx-0"></i>
               <span class="count"></span>
             </a> -->
-            <!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div> -->
-                <!-- </div> -->
-                <!-- <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div> -->
-              <!-- </a> -->
-              <!-- <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a> -->
-              <!-- <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a> -->
-            <!-- </div> -->
-          </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="/backend/images/faces/face28.jpg" alt="profile"/>
@@ -237,7 +194,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -245,7 +202,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -256,7 +213,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -264,7 +221,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -272,7 +229,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -280,7 +237,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="/backend/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -305,97 +262,48 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
+              <span class="menu-title">Data Master</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Bus & Elf</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Roda 4</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Roda 2</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Perlengkapan</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" data-toggle="collapse" href="transaksi1.blade.php" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Transaksi</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Bus & Elf</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Roda 4</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Roda 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Perlengkapan</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="pages/documentation/documentation.html">
               <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">Laporan</span>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="pages/documentation/documentation.html">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Reset Password</span>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- partial -->
@@ -405,8 +313,8 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Aamir</h3>
-                  <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
+                  <h3 class="font-weight-bold">Welcome Admin!</h3>
+                  <!-- <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6> -->
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -430,7 +338,7 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card tale-bg">
                 <div class="card-people mt-auto">
-                  <img src="images/dashboard/people.svg" alt="people">
+                  <img src="/backend/images/dashboard/people.svg" alt="people">
                   <div class="weather-info">
                     <div class="d-flex">
                       <div>
@@ -450,18 +358,18 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Today’s Bookings</p>
-                      <p class="fs-30 mb-2">4006</p>
-                      <p>10.00% (30 days)</p>
+                      <p class="mb-4">Number of Vehicles</p>
+                      <p class="fs-30 mb-2">32</p>
+                      <p>(Fixed Amount)</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="mb-4">Total Bookings</p>
-                      <p class="fs-30 mb-2">61344</p>
-                      <p>22.00% (30 days)</p>
+                      <p class="mb-4">Type of Vehicle</p>
+                      <p class="fs-30 mb-2">3</p>
+                      <p>(Fixed Amount)</p>
                     </div>
                   </div>
                 </div>
@@ -470,18 +378,18 @@
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
                     <div class="card-body">
-                      <p class="mb-4">Number of Meetings</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
+                      <p class="mb-4">Total Transaction</p>
+                      <p class="fs-30 mb-2">Rp180000</p>
+                      <p>(1 days)</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
-                      <p class="mb-4">Number of Clients</p>
-                      <p class="fs-30 mb-2">47033</p>
-                      <p>0.22% (30 days)</p>
+                      <p class="mb-4">Number of Transactions </p>
+                      <p class="fs-30 mb-2">45</p>
+                      <p>(30 days)</p>
                     </div>
                   </div>
                 </div>
@@ -492,7 +400,7 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Order Details</p>
+                  <!-- <p class="card-title">Order Details</p>
                   <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                   <div class="d-flex flex-wrap mb-5">
                     <div class="mr-5 mt-3">
@@ -512,20 +420,20 @@
                       <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
                     </div> 
                   </div>
-                  <canvas id="order-chart"></canvas>
+                  <canvas id="order-chart"></canvas> -->
                 </div>
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                 <div class="d-flex justify-content-between">
-                  <p class="card-title">Sales Report</p>
+                 <!-- <div class="d-flex justify-content-between"> -->
+                  <!-- <p class="card-title">Sales Report</p>
                   <a href="#" class="text-info">View all</a>
                  </div>
                   <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                   <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
-                  <canvas id="sales-chart"></canvas>
+                  <canvas id="sales-chart"></canvas> -->
                 </div>
               </div>
             </div>
@@ -534,23 +442,23 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card position-relative">
                 <div class="card-body">
-                  <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
+                  <!-- <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
+                      <div class="carousel-item active"> -->
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
-                            <div class="ml-xl-4 mt-3">
+                            <!-- <div class="ml-xl-4 mt-3">
                             <p class="card-title">Detailed Reports</p>
                               <h1 class="text-primary">$34040</h1>
                               <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
                               <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                            </div>  
+                            </div>   -->
                             </div>
-                          <div class="col-md-12 col-xl-9">
+                          <!-- <div class="col-md-12 col-xl-9">
                             <div class="row">
                               <div class="col-md-6 border-right">
-                                <div class="table-responsive mb-3 mb-md-0 mt-3">
-                                  <table class="table table-borderless report-table">
+                                <div class="table-responsive mb-3 mb-md-0 mt-3"> -->
+                                  <!-- <table class="table table-borderless report-table">
                                     <tr>
                                       <td class="text-muted">Illinois</td>
                                       <td class="w-100 px-0">
@@ -605,13 +513,13 @@
                                       </td>
                                       <td><h5 class="font-weight-bold mb-0">793</h5></td>
                                     </tr>
-                                  </table>
-                                </div>
-                              </div>
-                              <div class="col-md-6 mt-3">
+                                  </table> -->
+                                <!-- </div>
+                              </div> -->
+                              <!-- <div class="col-md-6 mt-3">
                                 <canvas id="north-america-chart"></canvas>
                                 <div id="north-america-legend"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
                         </div>
@@ -620,17 +528,17 @@
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 mt-3">
-                            <p class="card-title">Detailed Reports</p>
+                            <!-- <p class="card-title">Detailed Reports</p>
                               <h1 class="text-primary">$34040</h1>
                               <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
-                              <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                              <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p> -->
                             </div>  
                             </div>
                           <div class="col-md-12 col-xl-9">
                             <div class="row">
                               <div class="col-md-6 border-right">
                                 <div class="table-responsive mb-3 mb-md-0 mt-3">
-                                  <table class="table table-borderless report-table">
+                                  <!-- <table class="table table-borderless report-table">
                                     <tr>
                                       <td class="text-muted">Illinois</td>
                                       <td class="w-100 px-0">
@@ -685,36 +593,36 @@
                                       </td>
                                       <td><h5 class="font-weight-bold mb-0">793</h5></td>
                                     </tr>
-                                  </table>
+                                  </table> -->
                                 </div>
                               </div>
-                              <div class="col-md-6 mt-3">
+                              <!-- <div class="col-md-6 mt-3">
                                 <canvas id="south-america-chart"></canvas>
                                 <div id="south-america-legend"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
+                    <!-- <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#detailedReports" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-7 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body">
-                  <p class="card-title mb-0">Top Products</p>
+                <div class="card-body"> -->
+                  <!-- <p class="card-title mb-0">Top Products</p>
                   <div class="table-responsive">
                     <table class="table table-striped table-borderless">
                       <thead>
@@ -769,15 +677,15 @@
                           <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
                         </tr>
                       </tbody>
-                    </table>
-                  </div>
+                    </table> -->
+                  <!-- </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-5 grid-margin stretch-card">
+            </div> -->
+            <!-- <div class="col-md-5 grid-margin stretch-card">
 							<div class="card">
-								<div class="card-body">
-									<h4 class="card-title">To Do Lists</h4>
+								<div class="card-body"> -->
+									<!-- <h4 class="card-title">To Do Lists</h4>
 									<div class="list-wrapper pt-2">
 										<ul class="d-flex flex-column-reverse todo-list todo-list-custom">
 											<li>
@@ -831,10 +739,10 @@
 										<input type="text" class="form-control todo-list-input"  placeholder="Add new task">
 										<button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
 									</div>
-								</div>
-							</div>
+								</div> -->
+							<!-- </div>
             </div>
-          </div>
+          </div> -->
           <div class="row">
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card">
@@ -938,10 +846,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12 stretch-card grid-margin grid-margin-md-0">
-                  <div class="card data-icon-card-primary">
-                    <div class="card-body">
-                      <p class="card-title text-white">Number of Meetings</p>                      
+                <!-- <div class="col-md-12 stretch-card grid-margin grid-margin-md-0"> -->
+                  <!-- <div class="card data-icon-card-primary">
+                    <div class="card-body"> -->
+                      <!-- <p class="card-title text-white">Number of Meetings</p>                      
                       <div class="row">
                         <div class="col-8 text-white">
                           <h3>34040</h3>
@@ -951,14 +859,14 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </div> -->
+                <!-- </div>
+              </div> -->
+            <!-- </div> -->
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Notifications</p>
+                  <!-- <p class="card-title">Notifications</p>
                   <ul class="icon-data-list">
                     <li>
                       <div class="d-flex">
@@ -1011,7 +919,7 @@
                       </div>
                     </li>
                   </ul>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -1019,7 +927,7 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Advanced Table</p>
+                  <!-- <p class="card-title">Advanced Table</p>
                   <div class="row">
                     <div class="col-12">
                       <div class="table-responsive">
@@ -1037,7 +945,7 @@
                             </tr>
                           </thead>
                       </table>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   </div>
