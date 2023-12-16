@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roda_duas', function (Blueprint $table) {
+        Schema::create('transaksi1s', function (Blueprint $table) {
             $table->id();
             $table->string('no_pol');
-            $table->enum('jenis_bbm',['Pertamax', 'Dexlite'])->default('Pertamax');
-            $table->string('max_pengisian');
+            $table->enum('jenis_bbm',['dexlite','pertamax'])->default('dexlite');
+            $table->string('nama_pemohon');
+            $table->string('no_seri_kupon');
+            $table->date('tanggal');
+            $table->integer('jumlah_liter');
+            $table->integer('harga_satuan');
+            $table->integer('jumlah_nominal');
             $table->timestamps();
         });
     }
@@ -25,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roda_duas');
+        Schema::dropIfExists('transaksi1s');
     }
 };

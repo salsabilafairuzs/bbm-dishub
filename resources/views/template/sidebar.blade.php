@@ -16,23 +16,23 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/bus">Bus & Elf</a></li>
             <li class="nav-item"> <a class="nav-link" href="/rodaempat">Roda 4</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Roda 2</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Perlengkapan</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/rodadua">Roda 2</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/perlengkapan">Perlengkapan</a></li>
           </ul>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="transaksi1.blade.php" aria-expanded="false" aria-controls="form-elements">
+        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
           <i class="icon-columns menu-icon"></i>
           <span class="menu-title">Transaksi</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Bus & Elf</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Roda 4</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Roda 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Perlengkapan</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transaksi1">Bus & Elf</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transaksi2">Roda 4</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transaksi3">Roda 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transaksi4">Perlengkapan</a></li>
           </ul>
         </div>
       </li>

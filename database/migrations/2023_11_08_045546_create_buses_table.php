@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
             $table->string('no_pol');
-            $table->enum('jenis_bbm',['dexlite','pertamax'])->default('dexlite');
+            $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
             $table->string('max_pengisian');
             $table->timestamps();
         });

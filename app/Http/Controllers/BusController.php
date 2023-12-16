@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class BusController extends Controller
@@ -11,7 +12,9 @@ class BusController extends Controller
      */
     public function index()
     {
-        return view('bus.bus');
+        $data['bus'] = Bus::get();
+        // return $data; die;
+        return view('bus.bus', $data);
     }
 
     /**
@@ -19,7 +22,7 @@ class BusController extends Controller
      */
     public function create()
     {
-        //
+        return view('bus.tambah');
     }
 
     /**
@@ -27,7 +30,15 @@ class BusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $bus = new Bus();
+        $bus->no_pol = $request['nomor'];
+        $bus->max_pengisian = $request['max_isi'];
+        $bus->jenis_bbm = $request['jenis_bbm'];
+        $bus->save();
+
+        return redirect('/bus');
+
     }
 
     /**
@@ -43,7 +54,9 @@ class BusController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['bus'] = Bus::where('id', $id)->first();
+
+        return view('bus.edit', $data);
     }
 
     /**
@@ -51,7 +64,14 @@ class BusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // return $request; die;
+        $bus = Bus::where('id', $id)->first();
+        $bus->no_pol = $request['nomor'];
+        $bus->max_pengisian = $request['max_isi'];
+        $bus->jenis_bbm = $request['jenis_bbm'];
+        $bus->update();
+
+        return redirect('/bus');
     }
 
     /**
@@ -59,6 +79,9 @@ class BusController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bus = Bus::where('id', $id)->first();
+        $bus->delete();
+
+        return redirect('/bus');
     }
 }

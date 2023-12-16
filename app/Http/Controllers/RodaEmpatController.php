@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RodaEmpat;
 use Illuminate\Http\Request;
 
-class RodaEmpatController extends Controller
+class rodaempatController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('rodaempat.roda-empat');
+        $data['rodaempat'] = RodaEmpat::get();
+
+        return view('rodaempat.roda-empat', $data);
     }
 
     /**
@@ -19,7 +22,7 @@ class RodaEmpatController extends Controller
      */
     public function create()
     {
-        //
+        return view('rodaempat.tambah');
     }
 
     /**
@@ -27,7 +30,13 @@ class RodaEmpatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rodaempat = new RodaEmpat();
+        $rodaempat->no_pol = $request['nomor'];
+        $rodaempat->max_pengisian = $request['max_isi'];
+        $rodaempat->jenis_bbm = $request['jenis_bbm'];
+        $rodaempat->save();
+
+        return redirect('/rodaempat');
     }
 
     /**
@@ -43,7 +52,9 @@ class RodaEmpatController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['rodaempat'] = RodaEmpat::where('id', $id)->first();
+
+        return view('rodaempat.edit', $data);
     }
 
     /**
@@ -51,7 +62,13 @@ class RodaEmpatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rodaempat = RodaEmpat::where('id', $id)->first();
+        $rodaempat->no_pol = $request['nomor'];
+        $rodaempat->max_pengisian = $request['max_isi'];
+        $rodaempat->jenis_bbm = $request['jenis_bbm'];
+        $rodaempat->update();
+
+        return redirect('/rodaempat');
     }
 
     /**
@@ -59,6 +76,9 @@ class RodaEmpatController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $rodaempat = RodaEmpat::where('id', $id)->first();
+        $rodaempat->delete();
+
+        return redirect('/rodaempat');
     }
 }
