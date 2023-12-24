@@ -4,14 +4,14 @@
       <div class="card shadow-lg">
         <div class="card-body">
             <div class="row">
-              <h4 class="card-title">Data Master Roda Empat</h4>
+              <h4 class="card-title" style="margin-left:20px">Data Master Roda 4</h4>
                 <div class="col-md-12">
                   <a href="{{url('/rodaempat/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>No Pol</th>
+                            <th>Nomor Polisi</th>
                             <th>Max Pengisian</th>
                             <th>Jenis BBM</th>
                             <th>Aksi</th>

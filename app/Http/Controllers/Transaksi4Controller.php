@@ -12,7 +12,8 @@ class Transaksi4Controller extends Controller
      */
     public function index()
     {
-        return view('transaksi4.transaksi4');
+        $data['transaksi4'] = Transaksi4::get();
+        return view('transaksi4.transaksi4', $data);
     }
 
     /**
@@ -20,7 +21,7 @@ class Transaksi4Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksi4.tambah');
     }
 
     /**
@@ -28,18 +29,18 @@ class Transaksi4Controller extends Controller
      */
     public function store(Request $request)
     {
-        $transaksi = new Transaksi4();
-        $transaksi->no_pol = $request['nopol'];
-        $transaksi->jenis_bbm = $request['bbm'];
-        $transaksi->nama_pemohon = $request['nama'];
-        $transaksi->no_seri_kupon = $request['no_seri'];
-        $transaksi->tanggal = $request['tanggal'];
-        $transaksi->jumlah_liter = $request['jumlah'];
-        $transaksi->harga_satuan = $request['harga_satuan'];
-        $transaksi->jumlah_nominal= $request['jumlah_nominal'];
-        $transaksi->save();
+        $transaksi4 = new Transaksi4();
+        $transaksi4->no_pol = $request['nopol'];
+        $transaksi4->jenis_bbm = $request['bbm'];
+        $transaksi4->nama_pemohon = $request['nama'];
+        $transaksi4->no_seri_kupon = $request['no_seri'];
+        $transaksi4->tanggal = $request['tanggal'];
+        $transaksi4->jumlah_liter = $request['jumlah'];
+        $transaksi4->harga_satuan = $request['harga_satuan'];
+        $transaksi4->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi4->save();
 
-        return back();
+        return redirect('/transaksi4');
     }
 
     /**
@@ -55,7 +56,9 @@ class Transaksi4Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['transaksi4'] = Transaksi4::where('id', $id)->first();
+
+        return view('transaksi4.edit', $data);
     }
 
     /**
@@ -63,7 +66,18 @@ class Transaksi4Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $transaksi4 = Transaksi4::where('id', $id)->first();
+        $transaksi4->no_pol = $request['nopol'];
+        $transaksi4->jenis_bbm = $request['bbm'];
+        $transaksi4->nama_pemohon = $request['nama'];
+        $transaksi4->no_seri_kupon = $request['no_seri'];
+        $transaksi4->tanggal = $request['tanggal'];
+        $transaksi4->jumlah_liter = $request['jumlah'];
+        $transaksi4->harga_satuan = $request['harga_satuan'];
+        $transaksi4->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi4->save();
+
+        return redirect('/transaksi4');
     }
 
     /**
@@ -71,6 +85,9 @@ class Transaksi4Controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $transaksi4 = Transaksi4::where('id', $id)->first();
+        $transaksi4->delete();
+
+        return redirect('/transaksi4');
     }
 }

@@ -4,7 +4,7 @@
       <div class="card shadow-lg">
         <div class="card-body">
           <div class="row">
-            <h4 class="card-title">Data Master Roda Dua</h4>
+            <h4 class="card-title" style="margin-left:20px">Data Master Roda 2</h4>
           </div>
             <div class="row">
                 {{-- <button class="btn btn-primary btn-sm" style="margin-left:40px; margin-top:20px;">Tambah</button> --}}
@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>No Pol</th>
+                            <th>Nomor Polisi</th>
                             <th>Max Pengisian</th>
                             <th>Jenis BBM</th>
                             <th>Aksi</th>

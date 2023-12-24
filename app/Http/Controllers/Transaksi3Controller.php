@@ -12,7 +12,8 @@ class Transaksi3Controller extends Controller
      */
     public function index()
     {
-        return view('transaksi3.transaksi3');
+        $data['transaksi3'] = Transaksi3::get();
+        return view('transaksi3.transaksi3', $data);
     }
 
     /**
@@ -20,7 +21,7 @@ class Transaksi3Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksi3.tambah');
     }
 
     /**
@@ -28,18 +29,18 @@ class Transaksi3Controller extends Controller
      */
     public function store(Request $request)
     {
-        $transaksi = new Transaksi3();
-        $transaksi->no_pol = $request['nopol'];
-        $transaksi->jenis_bbm = $request['bbm'];
-        $transaksi->nama_pemohon = $request['nama'];
-        $transaksi->no_seri_kupon = $request['no_seri'];
-        $transaksi->tanggal = $request['tanggal'];
-        $transaksi->jumlah_liter = $request['jumlah'];
-        $transaksi->harga_satuan = $request['harga_satuan'];
-        $transaksi->jumlah_nominal= $request['jumlah_nominal'];
-        $transaksi->save();
+        $transaksi3 = new Transaksi3();
+        $transaksi3->no_pol = $request['nopol'];
+        $transaksi3->jenis_bbm = $request['bbm'];
+        $transaksi3->nama_pemohon = $request['nama'];
+        $transaksi3->no_seri_kupon = $request['no_seri'];
+        $transaksi3->tanggal = $request['tanggal'];
+        $transaksi3->jumlah_liter = $request['jumlah'];
+        $transaksi3->harga_satuan = $request['harga_satuan'];
+        $transaksi3->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi3->save();
 
-        return back();
+        return redirect('/transaksi3');
     }
 
     /**
@@ -55,7 +56,9 @@ class Transaksi3Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['transaksi3'] = Transaksi3::where('id', $id)->first();
+
+        return view('transaksi3.edit', $data);
     }
 
     /**
@@ -63,7 +66,18 @@ class Transaksi3Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $transaksi3 = Transaksi3::where('id', $id)->first();
+        $transaksi3->no_pol = $request['nopol'];
+        $transaksi3->jenis_bbm = $request['bbm'];
+        $transaksi3->nama_pemohon = $request['nama'];
+        $transaksi3->no_seri_kupon = $request['no_seri'];
+        $transaksi3->tanggal = $request['tanggal'];
+        $transaksi3->jumlah_liter = $request['jumlah'];
+        $transaksi3->harga_satuan = $request['harga_satuan'];
+        $transaksi3->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi3->update();
+
+        return redirect('/transaksi3');
     }
 
     /**
@@ -71,6 +85,9 @@ class Transaksi3Controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $transaksi3 = Transaksi3::where('id', $id)->first();
+        $transaksi3->delete();
+
+        return redirect('/transaksi3');
     }
 }

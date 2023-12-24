@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RodaEmpat;
+use Validator;
 use Illuminate\Http\Request;
 
 class rodaempatController extends Controller
@@ -30,12 +31,27 @@ class rodaempatController extends Controller
      */
     public function store(Request $request)
     {
-        $rodaempat = new RodaEmpat();
-        $rodaempat->no_pol = $request['nomor'];
-        $rodaempat->max_pengisian = $request['max_isi'];
-        $rodaempat->jenis_bbm = $request['jenis_bbm'];
-        $rodaempat->save();
+        $cek = Validator::make($request->all(), [
+            'no_pol' => ['required','unique:buses'],
+            'max_isi' => ['required'],
+    
+        ],[
+            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
+            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
+            'max_isi.required'=> 'Max Pengisian wajib diisi !',
+        ]);
 
+        if ($cek->fails()) {
+            return redirect()->back()
+                ->withErrors($cek)
+                ->withInput();
+        }else{
+            $rodaempat = new RodaEmpat();
+            $rodaempat->no_pol = $request['no_pol'];
+            $rodaempat->max_pengisian = $request['max_isi'];
+            $rodaempat->jenis_bbm = $request['jenis_bbm'];
+            $rodaempat->save();
+        }
         return redirect('/rodaempat');
     }
 
@@ -62,12 +78,28 @@ class rodaempatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $rodaempat = RodaEmpat::where('id', $id)->first();
-        $rodaempat->no_pol = $request['nomor'];
-        $rodaempat->max_pengisian = $request['max_isi'];
-        $rodaempat->jenis_bbm = $request['jenis_bbm'];
-        $rodaempat->update();
+        
+        $cek = Validator::make($request->all(), [
+            'no_pol' => ['required','unique:buses'],
+            'max_isi' => ['required'],
+    
+        ],[
+            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
+            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
+            'max_isi.required'=> 'Max Pengisian wajib diisi !',
+        ]);
 
+        if ($cek->fails()) {
+            return redirect()->back()
+                ->withErrors($cek)
+                ->withInput();
+        }else{
+            $rodaempat = new RodaEmpat();
+            $rodaempat->no_pol = $request['no_pol'];
+            $rodaempat->max_pengisian = $request['max_isi'];
+            $rodaempat->jenis_bbm = $request['jenis_bbm'];
+            $rodaempat->update();
+        }
         return redirect('/rodaempat');
     }
 

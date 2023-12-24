@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RodaDua;
+use Validator;
 use Illuminate\Http\Request;
 
 class RodaDuaController extends Controller
@@ -30,12 +31,27 @@ class RodaDuaController extends Controller
      */
     public function store(Request $request)
     {
-        $rodadua = new RodaDua();
-        $rodadua->no_pol = $request['nomor'];
-        $rodadua->max_pengisian = $request['max_isi'];
-        $rodadua->jenis_bbm = $request['jenis_bbm'];
-        $rodadua->save();
+        $cek = Validator::make($request->all(), [
+            'no_pol' => ['required','unique:buses'],
+            'max_isi' => ['required'],
+    
+        ],[
+            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
+            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
+            'max_isi.required'=> 'Max Pengisian wajib diisi !',
+        ]);
 
+        if ($cek->fails()) {
+            return redirect()->back()
+                ->withErrors($cek)
+                ->withInput();
+        }else{
+            $rodadua = new RodaDua();
+            $rodadua->no_pol = $request['no_pol'];
+            $rodadua->max_pengisian = $request['max_isi'];
+            $rodadua->jenis_bbm = $request['jenis_bbm'];
+            $rodadua->save();
+        }
         return redirect('/rodadua');
     }
 
@@ -62,12 +78,27 @@ class RodaDuaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $rodadua = RodaDua::where('id', $id)->first();
-        $rodadua->no_pol = $request['nomor'];
-        $rodadua->max_pengisian = $request['max_isi'];
-        $rodadua->jenis_bbm = $request['jenis_bbm'];
-        $rodadua->update();
+        $cek = Validator::make($request->all(), [
+            'no_pol' => ['required','unique:buses'],
+            'max_isi' => ['required'],
+    
+        ],[
+            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
+            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
+            'max_isi.required'=> 'Max Pengisian wajib diisi !',
+        ]);
 
+        if ($cek->fails()) {
+            return redirect()->back()
+                ->withErrors($cek)
+                ->withInput();
+        }else{
+            $rodadua = new RodaDua();
+            $rodadua->no_pol = $request['no_pol'];
+            $rodadua->max_pengisian = $request['max_isi'];
+            $rodadua->jenis_bbm = $request['jenis_bbm'];
+            $rodadua->update();
+        }
         return redirect('/rodadua');
     }
 

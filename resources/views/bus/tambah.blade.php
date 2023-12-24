@@ -1,7 +1,7 @@
 @extends('template.template')
 @section('konten')
     <div class="content-wrapper">
-      <div class="card shadow-lg">
+    <div class="card shadow-lg">
         <div class="card-body">
                     <h4 class="card-title">Tambah Data Bus & Elf</h4>
                     <form class="form-sample" action="{{url('bus')}}" method="POST">

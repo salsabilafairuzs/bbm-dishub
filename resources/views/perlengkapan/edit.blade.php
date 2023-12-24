@@ -12,6 +12,9 @@
                             <label class="col-sm-3 col-form-label">Nomor Polisi</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="nomor" value=" {{ $perlengkapan->no_pol }}" />
+                                @if ($errors->has('no_pol'))
+                                    <span class="text-danger">{{ $errors->first('no_pol') }}</span>
+                                @endif
                             </div>
                             </div>
                         </div>
@@ -20,6 +23,9 @@
                             <label class="col-sm-3 col-form-label">Max Pengisian</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="max_isi" value=" {{ $perlengkapan->max_pengisian }}" />
+                                @if ($errors->has('no_pol'))
+                                    <span class="text-danger">{{ $errors->first('no_pol') }}</span>
+                                @endif
                             </div>
                             </div>
                         </div>
@@ -39,7 +45,8 @@
                         </div>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        {{-- <button class="btn btn-light">Cancel</button> --}}
+                        <a href="/perlengkapan" class="btn btn-light">Cancel</a>
                     </form>
                     </div>
         </div>

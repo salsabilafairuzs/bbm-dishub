@@ -12,8 +12,8 @@ class Transaksi1Controller extends Controller
      */
     public function index()
     {
-        
-        return view('transaksi1.transaksi1');
+        $data['transaksi1'] = Transaksi1::get();
+        return view('transaksi1.transaksi1', $data);
     }
 
     /**
@@ -21,7 +21,7 @@ class Transaksi1Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('transaksi1.tambah');
     }
 
     /**
@@ -31,18 +31,18 @@ class Transaksi1Controller extends Controller
     {
         // return $request; 
 
-        $transaksi = new Transaksi1();
-        $transaksi->no_pol = $request['nopol'];
-        $transaksi->jenis_bbm = $request['bbm'];
-        $transaksi->nama_pemohon = $request['nama'];
-        $transaksi->no_seri_kupon = $request['no_seri'];
-        $transaksi->tanggal = $request['tanggal'];
-        $transaksi->jumlah_liter = $request['jumlah'];
-        $transaksi->harga_satuan = $request['harga_satuan'];
-        $transaksi->jumlah_nominal= $request['jumlah_nominal'];
-        $transaksi->save();
+        $transaksi1 = new Transaksi1();
+        $transaksi1->no_pol = $request['nopol'];
+        $transaksi1->jenis_bbm = $request['bbm'];
+        $transaksi1->nama_pemohon = $request['nama'];
+        $transaksi1->no_seri_kupon = $request['no_seri'];
+        $transaksi1->tanggal = $request['tanggal'];
+        $transaksi1->jumlah_liter = $request['jumlah'];
+        $transaksi1->harga_satuan = $request['harga_satuan'];
+        $transaksi1->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi1->save();
 
-        return back();
+        return redirect('/transaksi1');
     }
 
     /**
@@ -58,7 +58,9 @@ class Transaksi1Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['transaksi1'] = Transaksi1::where('id', $id)->first();
+
+        return view('transaksi1.edit', $data);
     }
 
     /**
@@ -66,7 +68,18 @@ class Transaksi1Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $transaksi1 = Transaksi1::where('id', $id)->first();
+        $transaksi1->no_pol = $request['nopol'];
+        $transaksi1->jenis_bbm = $request['bbm'];
+        $transaksi1->nama_pemohon = $request['nama'];
+        $transaksi1->no_seri_kupon = $request['no_seri'];
+        $transaksi1->tanggal = $request['tanggal'];
+        $transaksi1->jumlah_liter = $request['jumlah'];
+        $transaksi1->harga_satuan = $request['harga_satuan'];
+        $transaksi1->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi1->update();
+
+        return redirect('/transaksi1');
     }
 
     /**
@@ -74,6 +87,9 @@ class Transaksi1Controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $transaksi1 = Transaksi1::where('id', $id)->first();
+        $transaksi1->delete();
+
+        return redirect('/transaksi1');
     }
 }
