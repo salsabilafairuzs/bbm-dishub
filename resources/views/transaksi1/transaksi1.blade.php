@@ -16,6 +16,7 @@
                                 <th>Tanggal</th>
                                 <th>No Seri Kupon</th>
                                 <th>Jumlah</th>
+                                <th>Foto</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -28,6 +29,7 @@
                             <td>{{ $item->tanggal }}</td>
                             <td>{{ $item->no_seri_kupon}}</td>
                             <td>{{ $item->jumlah_nominal }}</td>
+                            <td><img src="{{ asset('buktiTransaksi1/' . $item->bukti_pembayaran) }}" width="90px" height="78%"></td>
                             <td>
                                 <a class="btn btn-warning btn-sm btn-square" href=""><i class="fas fa-info"></i></a>
                                 <a class="btn btn-success btn-sm btn-square" href="{{ url('transaksi1/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>

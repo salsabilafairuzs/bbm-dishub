@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('jumlah_liter');
             $table->integer('harga_satuan');
             $table->integer('jumlah_nominal');
+            $table->text('bukti_pembayaran')->nullable();
             $table->timestamps();
         });
     }
