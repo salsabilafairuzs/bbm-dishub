@@ -14,7 +14,7 @@ class RodaDuaController extends Controller
     public function index()
     {
         $data['rodadua'] = RodaDua::get();
-
+        // return $data; die;
         return view('rodadua.roda-dua', $data);
     }
 
@@ -31,11 +31,15 @@ class RodaDuaController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
+
         $cek = Validator::make($request->all(), [
+            'name' => ['required'],
             'no_pol' => ['required','unique:buses'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
             'no_pol.unique'=> 'Nomor Polisi sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
@@ -47,6 +51,7 @@ class RodaDuaController extends Controller
                 ->withInput();
         }else{
             $rodadua = new RodaDua();
+            $rodadua->name = $request['name'];
             $rodadua->no_pol = $request['no_pol'];
             $rodadua->max_pengisian = $request['max_isi'];
             $rodadua->jenis_bbm = $request['jenis_bbm'];
@@ -78,13 +83,15 @@ class RodaDuaController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // return $request; die;
         $cek = Validator::make($request->all(), [
-            'no_pol' => ['required','unique:buses'],
+            'name' => ['required'],
+            'no_pol' => ['required'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
-            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
         ]);
 
@@ -93,12 +100,14 @@ class RodaDuaController extends Controller
                 ->withErrors($cek)
                 ->withInput();
         }else{
-            $rodadua = new RodaDua();
+            $rodadua = RodaDua::where('id', $id)->first();
+            $rodadua->name = $request['name'];
             $rodadua->no_pol = $request['no_pol'];
             $rodadua->max_pengisian = $request['max_isi'];
             $rodadua->jenis_bbm = $request['jenis_bbm'];
             $rodadua->update();
         }
+
         return redirect('/rodadua');
     }
 

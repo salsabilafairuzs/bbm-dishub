@@ -78,14 +78,6 @@
                         <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Harga Satuan</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="harga_satuan" value="{{ $transaksi2->harga_satuan }}"/>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Jumlah Nominal</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="jumlah_nominal" value="{{ $transaksi2->jumlah_nominal }}"/>

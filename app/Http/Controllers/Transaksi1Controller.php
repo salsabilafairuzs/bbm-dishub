@@ -39,18 +39,15 @@ class Transaksi1Controller extends Controller
             'tanggal' => ['required'],
             'no_seri' => ['required'],
             'jumlah' => ['required','numeric'],
-            'harga_satuan' => ['required','numeric'],
             'jumlah_nominal' => ['required','numeric'],
             'foto' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
     
         ],[
             'nama.required'=> 'Nama wajib diisi !',
-            'tanggal.required'=> 'Tangal wajib diisi !',
+            'tanggal.required'=> 'Tanggal wajib diisi !',
             'no_seri.required'=> 'Nomor Seri wajib diisi !',
             'jumlah.required'=> 'Jumlah wajib diisi !',
             'jumlah.numeric'=> 'Jumlah Wajib Number!',
-            'harga_satuan.required'=> 'harga Satuan wajib diisi !',
-            'harga_satuan.numeric'=> 'harga Satuan Wajib Number !',
             'jumlah_nominal.required'=> 'Jumlah Nominal wajib diisi !',
             'jumlah_nominal.numeric'=> 'Jumlah Nominal wajib Number !',
             'foto.required' => 'Foto wajib diunggah!',
@@ -74,7 +71,6 @@ class Transaksi1Controller extends Controller
             $transaksi1->no_seri_kupon = $request['no_seri'];
             $transaksi1->tanggal = $request['tanggal'];
             $transaksi1->jumlah_liter = $request['jumlah'];
-            $transaksi1->harga_satuan = $request['harga_satuan'];
             $transaksi1->jumlah_nominal= $request['jumlah_nominal'];
 
             $name = 'buktiFoto-'.$transaksi1->no_pol.$count.'.png';
@@ -118,7 +114,6 @@ class Transaksi1Controller extends Controller
         $transaksi1->no_seri_kupon = $request['no_seri'];
         $transaksi1->tanggal = $request['tanggal'];
         $transaksi1->jumlah_liter = $request['jumlah'];
-        $transaksi1->harga_satuan = $request['harga_satuan'];
         $transaksi1->jumlah_nominal= $request['jumlah_nominal'];
         $transaksi1->update();
 

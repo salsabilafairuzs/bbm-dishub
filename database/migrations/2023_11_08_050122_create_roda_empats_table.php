@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('roda_empats', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('no_pol');
             $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
             $table->string('max_pengisian');

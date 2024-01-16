@@ -44,12 +44,12 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="pages/documentation/documentation.html">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Reset Password</span>
         </a>
-      </li>
+      </li> --}}
 
     </ul>
   </nav>

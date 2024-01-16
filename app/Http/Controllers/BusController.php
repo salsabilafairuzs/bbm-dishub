@@ -34,10 +34,12 @@ class BusController extends Controller
         // return $request;
 
         $cek = Validator::make($request->all(), [
+            'name' => ['required'],
             'no_pol' => ['required','unique:buses'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
             'no_pol.unique'=> 'Nomor Polisi sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
@@ -49,6 +51,7 @@ class BusController extends Controller
                 ->withInput();
         }else{
             $bus = new Bus();
+            $bus->name = $request['name'];
             $bus->no_pol = $request['no_pol'];
             $bus->max_pengisian = $request['max_isi'];
             $bus->jenis_bbm = $request['jenis_bbm'];
@@ -82,10 +85,12 @@ class BusController extends Controller
     {
         // return $request; die;
         $cek = Validator::make($request->all(), [
+            'name' => ['required'],
             'no_pol' => ['required'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
         ]);
@@ -96,6 +101,7 @@ class BusController extends Controller
                 ->withInput();
         }else{
             $bus = Bus::where('id', $id)->first();
+            $bus->name = $request['name'];
             $bus->no_pol = $request['no_pol'];
             $bus->max_pengisian = $request['max_isi'];
             $bus->jenis_bbm = $request['jenis_bbm'];

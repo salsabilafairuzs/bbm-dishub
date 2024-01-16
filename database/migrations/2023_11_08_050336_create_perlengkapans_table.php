@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('perlengkapans', function (Blueprint $table) {
             $table->id();
-            $table->string('no_pol');
+            $table->string('name');
             $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
             $table->string('max_pengisian');
             $table->timestamps();
