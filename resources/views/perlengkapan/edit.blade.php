@@ -9,11 +9,11 @@
                         <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nomor Polisi</label>
+                            <label class="col-sm-3 col-form-label">Nama Barang</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="nomor" value=" {{ $perlengkapan->no_pol }}" />
-                                @if ($errors->has('no_pol'))
-                                    <span class="text-danger">{{ $errors->first('no_pol') }}</span>
+                                <input type="text" class="form-control" name="name" value=" {{ $perlengkapan->name }}" />
+                                @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
                                 @endif
                             </div>
                             </div>

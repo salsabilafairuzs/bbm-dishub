@@ -31,12 +31,12 @@ class PerlengkapanController extends Controller
     public function store(Request $request)
     {
         $cek = Validator::make($request->all(), [
-            'no_pol' => ['required','unique:buses'],
+            'name' => ['required', 'unique:perlengkapans'],
             'max_isi' => ['required'],
     
         ],[
-            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
-            'no_pol.unique'=> 'Nomor Polisi sudah ada !',
+            'name' => 'Nama Barang wajib di isi !',
+            'name.unique'=> 'Nama Barang sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
         ]);
 
@@ -46,7 +46,7 @@ class PerlengkapanController extends Controller
                 ->withInput();
         }else{
             $perlengkapan = new Perlengkapan();
-            $perlengkapan->no_pol = $request['no_pol'];
+            $perlengkapan->name = $request['name'];
             $perlengkapan->max_pengisian = $request['max_isi'];
             $perlengkapan->jenis_bbm = $request['jenis_bbm'];
             $perlengkapan->save();
@@ -78,11 +78,11 @@ class PerlengkapanController extends Controller
     public function update(Request $request, string $id)
     {
         $cek = Validator::make($request->all(), [
-            'no_pol' => ['required'],
+            'name' => ['required'],
             'max_isi' => ['required'],
     
         ],[
-            'no_pol.required'=> 'Nomor Polisi wajib diisi !',
+            'name' => 'Nama Kendaraan wajib di isi !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
         ]);
 
@@ -92,14 +92,14 @@ class PerlengkapanController extends Controller
                 ->withInput();
         }else{
             $perlengkapan = Perlengkapan::where('id', $id)->first();
-            $perlengkapan->no_pol = $request['no_pol'];
+            $perlengkapan->name = $request['name'];
             $perlengkapan->max_pengisian = $request['max_isi'];
             $perlengkapan->jenis_bbm = $request['jenis_bbm'];
             $perlengkapan->update();
         }
+
         return redirect('/perlengkapan');
     }
-
     /**
      * Remove the specified resource from storage.
      */

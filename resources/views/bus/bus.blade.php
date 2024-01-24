@@ -9,13 +9,14 @@
             <div class="row">
                 {{-- <button class="btn btn-primary btn-sm" style="margin-left:40px; margin-top:20px;">Tambah</button> --}}
                 <div class="col-md-12">
-                  <a href="{{url('/bus/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a>
-                <table class="table table-striped table-bordered">
+                  <a href="{{url('/bus/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
+                  <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Nama Kendaraan</th>
                             <th>Nomor Polisi</th>
-                            <th>Max Pengisian</th>
+                            <th>Max 1x Permintaan</th>
                             <th>Jenis BBM</th>
                             <th>Aksi</th>
                         </tr>
@@ -24,12 +25,13 @@
                       @foreach ($bus as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->name }}</td>
                             <td>{{ $item->no_pol }}</td>
                             <td>{{ $item->max_pengisian }}</td>
                             <td>{{ $item->jenis_bbm }}</td>
                             <td>
-                              <a class="btn btn-success btn-sm btn-square" href="{{ url('bus/'.$item->id.'/edit')}}"><i class="fas fa-edit"></i></i></a>
-                              <a class="btn btn-danger btn-sm btn-square" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('bus-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
+                              <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('bus/'.$item->id.'/edit')}}"><i class="fas fa-edit"></i></i></a>
+                              <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('bus-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         @endforeach

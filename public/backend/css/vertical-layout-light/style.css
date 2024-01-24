@@ -30590,6 +30590,10 @@ div.tagsinput span.tag a {
   border-radius: 0 !important; /* Menghilangkan sudut melengkung */
 }
 
+.btn-rounded {
+  border-radius: 0;
+}
+
 @media (max-width: 991px) {
   #settings-trigger {
     display: none;

@@ -90,17 +90,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Harga Satuan <sup class="text-danger">*</sup></label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="harga_satuan"/>
-                                    @if ($errors->has('harga_satuan'))
-                                        <span class="text-danger">{{ $errors->first('harga_satuan') }}</span>
-                                    @endif
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Jumlah Nominal <sup class="text-danger">*</sup></label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="jumlah_nominal"/>

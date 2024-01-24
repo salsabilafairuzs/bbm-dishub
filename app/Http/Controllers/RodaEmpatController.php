@@ -32,10 +32,12 @@ class rodaempatController extends Controller
     public function store(Request $request)
     {
         $cek = Validator::make($request->all(), [
-            'no_pol' => ['required','unique:buses'],
+            'name' => ['required'],
+            'no_pol' => ['required','unique:roda_empats'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
             'no_pol.unique'=> 'Nomor Polisi sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
@@ -47,6 +49,7 @@ class rodaempatController extends Controller
                 ->withInput();
         }else{
             $rodaempat = new RodaEmpat();
+            $rodaempat->name = $request['name'];
             $rodaempat->no_pol = $request['no_pol'];
             $rodaempat->max_pengisian = $request['max_isi'];
             $rodaempat->jenis_bbm = $request['jenis_bbm'];
@@ -80,10 +83,12 @@ class rodaempatController extends Controller
     {
         
         $cek = Validator::make($request->all(), [
-            'no_pol' => ['required','unique:buses'],
+            'name' => ['required'],
+            'no_pol' => ['required'],
             'max_isi' => ['required'],
     
         ],[
+            'name' => 'Nama Kendaraan wajib di isi !',
             'no_pol.required'=> 'Nomor Polisi wajib diisi !',
             'no_pol.unique'=> 'Nomor Polisi sudah ada !',
             'max_isi.required'=> 'Max Pengisian wajib diisi !',
@@ -95,6 +100,7 @@ class rodaempatController extends Controller
                 ->withInput();
         }else{
             $rodaempat = new RodaEmpat();
+            $rodaempat->name = $request['name'];
             $rodaempat->no_pol = $request['no_pol'];
             $rodaempat->max_pengisian = $request['max_isi'];
             $rodaempat->jenis_bbm = $request['jenis_bbm'];

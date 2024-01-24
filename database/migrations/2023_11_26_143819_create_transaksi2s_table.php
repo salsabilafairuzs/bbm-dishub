@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('no_seri_kupon');
             $table->date('tanggal');
             $table->integer('jumlah_liter');
-            $table->integer('harga_satuan');
             $table->integer('jumlah_nominal');
+            $table->text('bukti_pembayaran')->nullable();
             $table->timestamps();
         });
     }
