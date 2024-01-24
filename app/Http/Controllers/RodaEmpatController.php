@@ -79,7 +79,7 @@ class rodaempatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)w
+    public function update(Request $request, string $id)
     {
         
         $cek = Validator::make($request->all(), [

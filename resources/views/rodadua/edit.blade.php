@@ -22,7 +22,7 @@
                             <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Nomor Polisi</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="nomor" value="{{ $rodadua->no_pol }}"/>
+                                <input type="text" class="form-control" name="no_pol" value="{{ $rodadua->no_pol }}"/>
                                 @if ($errors->has('no_pol'))
                                     <span class="text-danger">{{ $errors->first('no_pol') }}</span>
                                 @endif

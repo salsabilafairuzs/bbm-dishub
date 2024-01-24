@@ -22,7 +22,7 @@
                       @foreach ($rodaempat as $item)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{  $item->name }}</td>
+                        <td>{{ $item->name }}</td>
                         <td>{{ $item->no_pol }}</td>
                         <td>{{ $item->max_pengisian }}</td>
                         <td>{{ $item->jenis_bbm }}</td>
