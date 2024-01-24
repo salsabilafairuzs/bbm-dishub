@@ -40,12 +40,17 @@ Route::resource('/rodadua', RodaDuaController::class);
 Route::get('rodadua-hapus/{id}', [RodaDuaController::class, 'destroy']);
 Route::resource('/perlengkapan', PerlengkapanController::class);
 Route::get('perlengkapan-hapus/{id}', [PerlengkapanController::class, 'destroy']);
+
 Route::resource('/transaksi1', Transaksi1Controller::class);
 Route::get('transaksi1-hapus/{id}', [Transaksi1Controller::class, 'destroy']);
+Route::get('detail-transaksi1/{id}/show',[Transaksi1Controller::class, 'show']); //tambahkan kode ini untuk model
+
 Route::resource('/transaksi2', Transaksi2Controller::class);
 Route::get('transaksi2-hapus/{id}', [Transaksi2Controller::class, 'destroy']);
+
 Route::resource('/transaksi3', Transaksi3Controller::class);
 Route::get('transaksi3-hapus/{id}', [Transaksi3Controller::class, 'destroy']);
+
 Route::resource('/transaksi4', Transaksi4Controller::class);
 Route::get('transaksi4-hapus/{id}', [Transaksi4Controller::class, 'destroy']);
 
