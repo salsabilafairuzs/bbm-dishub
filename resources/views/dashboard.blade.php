@@ -98,10 +98,10 @@
                     <div class="row">
                       <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                         <div class="ml-xl-4 mt-3">
-                        <p class="card-title">Detailed Reports</p>
-                          <h1 class="text-primary">$34040</h1>
-                          <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
-                          <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                        <p class="card-title">Total Kendaraan</p>
+                          <h1 class="text-primary">32</h1>
+                          {{-- <h3 class="font-weight-100 mb-xl-2 text-primary">Total Kendaraan</h3> --}}
+                          <p class="mb-1 mb-xl-0">Total number of vehicles owned. </p>
                         </div>  
                         </div>
                       <div class="col-md-12 col-xl-9">
@@ -110,58 +110,40 @@
                             <div class="table-responsive mb-3 mb-md-0 mt-3">
                               <table class="table table-borderless report-table">
                                 <tr>
-                                  <td class="text-muted">Illinois</td>
+                                  <td class="text-muted">Bus & Elf</td>
                                   <td class="w-100 px-0">
                                     <div class="progress progress-md mx-4">
                                       <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </td>
-                                  <td><h5 class="font-weight-bold mb-0">713</h5></td>
+                                  <td><h5 class="font-weight-bold mb-0">10</h5></td>
                                 </tr>
                                 <tr>
-                                  <td class="text-muted">Washington</td>
+                                  <td class="text-muted">Roda 4</td>
                                   <td class="w-100 px-0">
                                     <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                      <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </td>
-                                  <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                  <td><h5 class="font-weight-bold mb-0">9</h5></td>
                                 </tr>
                                 <tr>
-                                  <td class="text-muted">Mississippi</td>
+                                  <td class="text-muted">Roda 2</td>
                                   <td class="w-100 px-0">
                                     <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                      <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </td>
-                                  <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                  <td><h5 class="font-weight-bold mb-0">12</h5></td>
                                 </tr>
                                 <tr>
-                                  <td class="text-muted">California</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">664</h5></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-muted">Maryland</td>
+                                  <td class="text-muted">Perlengkapan</td>
                                   <td class="w-100 px-0">
                                     <div class="progress progress-md mx-4">
                                       <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                   </td>
-                                  <td><h5 class="font-weight-bold mb-0">560</h5></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-muted">Alaska</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                  <td><h5 class="font-weight-bold mb-0">5</h5></td>
                                 </tr>
                               </table>
                             </div>

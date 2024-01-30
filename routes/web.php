@@ -47,13 +47,19 @@ Route::get('detail-transaksi1/{id}/show',[Transaksi1Controller::class, 'show']);
 
 Route::resource('/transaksi2', Transaksi2Controller::class);
 Route::get('transaksi2-hapus/{id}', [Transaksi2Controller::class, 'destroy']);
+Route::get('detail-transaksi2/{id}/show',[Transaksi2Controller::class, 'show']); //tambahkan kode ini untuk model
+
 
 Route::resource('/transaksi3', Transaksi3Controller::class);
 Route::get('transaksi3-hapus/{id}', [Transaksi3Controller::class, 'destroy']);
+Route::get('detail-transaksi3/{id}/show',[Transaksi3Controller::class, 'show']); //tambahkan kode ini untuk model
+
 
 Route::resource('/transaksi4', Transaksi4Controller::class);
 Route::get('transaksi4-hapus/{id}', [Transaksi4Controller::class, 'destroy']);
+Route::get('detail-transaksi4/{id}/show',[Transaksi4Controller::class, 'show']); //tambahkan kode ini untuk model
 
+Route::resource('/laporan', Transaksi3Controller::class);
 
 // Route::View ('/transaksi1', 'transaksi1');
 // Route::View ('/transaksi2', 'transaksi2');

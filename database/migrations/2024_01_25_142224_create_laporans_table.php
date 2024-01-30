@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksi3s', function (Blueprint $table) {
+        Schema::create('laporans', function (Blueprint $table) {
             $table->id();
             $table->string('no_pol');
             $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksi3s');
+        Schema::dropIfExists('laporans');
     }
 };

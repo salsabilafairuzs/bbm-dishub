@@ -88,7 +88,11 @@ class Transaksi2Controller extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Transaksi2::where('id', $id)->first();
+        return response()->json([
+            'success' => true,
+            'data'=>$data,
+        ]);
     }
 
     /**

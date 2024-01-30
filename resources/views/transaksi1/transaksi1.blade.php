@@ -6,8 +6,8 @@
                 <div class="row">
                 <h4 class="card-title" style="margin-left:20px">Data Transaksi Bus & Elf</h4>
                     <div class="col-md-12">
-                    <a href="{{url('/transaksi1/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a>
-                    {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
+                      <a href="{{url('/transaksi1/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
+                      {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -32,9 +32,9 @@
                             <td>{{ $item->jumlah_nominal }}</td>
                             <td><img src="{{ asset('buktiTransaksi1/' . $item->bukti_pembayaran) }}" style="border-radius: 6px;" width="90px" height="78%"></td>
                             <td>
-                                <a class="btn btn-warning btn-sm btn-square" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
-                                <a class="btn btn-success btn-sm btn-square" href="{{ url('transaksi1/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger btn-sm btn-square" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('transaksi1-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-warning btn-sm" style="border-radius:4px;" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
+                                <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('transaksi1/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-danger btn-sm" style="border-radius:4px;" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('transaksi1-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         @endforeach
@@ -57,69 +57,50 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Nomor Polisi</label>
-                  <div class="col-sm-10">
-                    <input type="text" readonly readonly class="form-control" name="nopol">
+                <div class="row">
+                  <div class="col-md-6 mb-3" >
+                    <label for="">Nomor Polisi</label>
+                    <input type="text" readonly class="form-control" name="nopol">
                   </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Jenis BBM</label>
-                  <div class="col-sm-10">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Jenis BBM</label>
                     <input type="text" readonly class="form-control" name="jenis">
                   </div>
                 </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Pemohon</label>
-                  <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Nama Pemohon</label>
                     <input type="text" readonly class="form-control" name="pemohon">
                   </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Nomor Seri</label>
-                  <div class="col-sm-10">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Nomor Seri Kupon</label>
                     <input type="text" readonly class="form-control" name="seri">
                   </div>
                 </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Tanggal Isi</label>
-                  <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Tanggal Isi</label>
                     <input type="text" readonly class="form-control" name="tanggal">
                   </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Jumlah Liter</label>
-                  <div class="col-sm-10">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Jumlah Liter</label>
                     <input type="text" readonly class="form-control" name="liter">
                   </div>
                 </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">harga Satuan</label>
-                  <div class="col-sm-10">
-                    <input type="text" readonly class="form-control" name="harga">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">Jumlah Nominal</label>
-                  <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Jumlah Liter</label>
                     <input type="text" readonly class="form-control" name="jumlah">
                   </div>
                 </div>
-
-                
+              </div>
               </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">Close</button>
+                {{-- <button type="button" class="btn btn-primary">Understood</button> --}}
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              {{-- <button type="button" class="btn btn-primary">Understood</button> --}}
-            </div>
+          
           </div>
         </div>
       </div>
@@ -148,7 +129,6 @@
                 $('input[name="seri"]').val(data.data.no_seri_kupon)
                 $('input[name="tanggal"]').val(data.data.tanggal)
                 $('input[name="liter"]').val(data.data.jumlah_liter)
-                $('input[name="harga"]').val(data.data.harga_satuan)
                 $('input[name="jumlah"]').val(data.data.jumlah_nominal)
             });
         }

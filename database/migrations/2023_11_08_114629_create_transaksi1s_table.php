@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transaksi1s', function (Blueprint $table) {
             $table->id();
             $table->string('no_pol');
-            $table->enum('jenis_bbm',['dexlite','pertamax'])->default('dexlite');
+            $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
             $table->string('nama_pemohon');
             $table->string('no_seri_kupon');
             $table->date('tanggal');

@@ -12,9 +12,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">NOPOL</label>
+                                <label class="col-sm-3 col-form-label">Nama Barang</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="no_pol">
+                                    <select class="form-control" name="name">
                                         @foreach ($perlengkapan as $item)
                                             <option value="{{ $item->no_pol }}">{{ $item->no_pol }}</option>
                                         @endforeach
