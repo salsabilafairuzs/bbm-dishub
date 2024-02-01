@@ -1,4 +1,4 @@
-
+{{-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,4 +85,4 @@
   <!-- endinject -->
 </body>
 
-</html>
+</html> --}}

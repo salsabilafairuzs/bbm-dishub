@@ -27,7 +27,7 @@
           </a> -->
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-            <img src="/backend/images/faces/face28.jpg" alt="profile"/>
+            <img src="/backend/images/dishub.png" alt="profile" class="mr-2" />
           </a>
           <p class="text-dark ms-2">{{ Auth::user()->name }}</p>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
