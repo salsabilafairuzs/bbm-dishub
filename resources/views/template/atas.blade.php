@@ -29,15 +29,16 @@
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
             <img src="/backend/images/faces/face28.jpg" alt="profile"/>
           </a>
+          <p class="text-dark ms-2">{{ Auth::user()->name }}</p>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
-              <i class="ti-settings text-primary"></i>
-              Settings
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+            this.closest('form').submit();">
+                <i class="ti-layout-sidebar-left"></i> Logout
             </a>
-            <a class="dropdown-item">
-              <i class="ti-power-off text-primary"></i>
-              Logout
-            </a>
+          </form>
           </div>
         </li>
         <!-- <li class="nav-item nav-settings d-none d-lg-flex">

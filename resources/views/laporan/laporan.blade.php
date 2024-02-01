@@ -1,47 +1,123 @@
 @extends('template.template')
 @section('konten')
     <div class="content-wrapper">
-        <div class="card shadow-lg">
-            <div class="card-body">
-                <div class="row">
-                <h4 class="card-title" style="margin-left:20px">Laporan Transaksi</h4>
-                    <div class="col-md-12">
-                        <a href="{{url('/laporan/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
-                        <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nomor Polisi</th>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>No Seri Kupon</th>
-                                <th>Jumlah</th>
-                                <th>Bukti</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($laporan as $item)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->no_pol }}</td>
-                            <td>{{ $item->nama_pemohon }}</td>
-                            <td>{{ $item->tanggal }}</td>
-                            <td>{{ $item->no_seri_kupon}}</td>
-                            <td>{{ $item->jumlah_nominal }}</td>
-                            <td><img src="{{ asset('buktiTransaksi3/' . $item->bukti_pembayaran) }}" width="90px" height="78%" style="border-radius: 1px;"></td>
-                            <td>
-                                <a class="btn btn-warning btn-sm" style="border-radius:4px;"  onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
-                                {{-- <a class="btn btn-success btn-sm" style="border-radius:4px;"  href="{{ url('laporan/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a> --}}
-                                <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('laporan-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
-                                <a class="btn btn-secondary btn-sm" style="border-radius:4px;"><i class="fas fa-print"></i></a>
-                            </td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    </div>
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="row">
+            <h4 class="card-title" style="margin-left:20px">Filter Laporan</h4>
+          </div>
+          <br>
+          <form method="post" class="form-horizontal" id="formKategori" action="{{ url('/laporan')}}">
+            @csrf @method('POST')
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Filter by</label>
+                    <select name="filter" class="custom-select" onchange="pilihFilter()">
+                        <option value="all">All</option>
+                        <option value="bulan">Bulan</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <select name="bulan" class="custom-select" style="margin-top:28px;">
+                            <option value="01">Januari</option>
+                            <option value="02">Februari</option>
+                            <option value="03">Maret</option>
+                            <option value="04">April</option>
+                            <option value="05">Mei</option>
+                            <option value="06">Juni</option>
+                            <option value="07">Juli</option>
+                            <option value="08">Agustus</option>
+                            <option value="09">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                    </select>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box-footer">
+                        <input type="submit" name="lanjut" class="btn btn-primary btn-sm" value="CARI">
+                        {{-- <input type="submit" name="excel" class="btn btn-success btn-flat fa-file-excel-o" value=" &#xf1c3; EXCEL"> --}}
+                        <input type="submit" name="pdf" class="btn btn-danger btn-sm fa-file-excel-o" value=" &#xf1c3; Cetak">
+                    </div>
+                </div>
+                
+            </div>
+        </form>
         </div>
+      </div>
+      <br>
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="row">
+            <h4 class="card-title" style="margin-left:20px">Laporan</h4>
+          </div>
+          <br>
+            <table class="table table-striped">
+                <thead>
+                    
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Kendaraan</th>
+                        <th>Nomor Polisi</th>
+                        <th>Nama</th>
+                        <th>Tanggal</th>
+                        <th>No Seri Kupon</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @isset($transaksi)
+                        @foreach ($transaksi as $item)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
+                            <td>{{ $item->no_pol }}</td>
+                            <td>{{ $item->nama_pemohon }}</td>
+                            <td>{{ $item->tanggal}}</td>
+                            <td>{{ $item->no_seri_kupon }}</td>
+                            <td>{{ $item->jumlah_liter }}</td>
+                        </tr>
+                        @endforeach
+                    @endisset
+                    {{-- @foreach ($transaksi2 as $item)
+                    <tr>
+                        <td>{{ $item->nopol }}</td>
+                    </tr>
+                    @endforeach --}}
+                </tbody>
+            </table>
+        </div>
+      </div>
     </div>
+@endsection
+@section('script')
+   <script>
+        $(document).ready(function() {
+            $('select[name="supplier"]').prop('hidden', true);
+            $('select[name="bulan"]').prop('hidden', true); 
+        })
+        function pilihFilter(){
+           var filter = $('select[name="filter"]').val()
+            
+           if(filter == 'bulan'){
+                $('select[name="bulan"]').prop('hidden', false);
+                $('select[name="supplier"]').prop('hidden', true);
+           }else if(filter == 'supplier'){
+                $('select[name="bulan"]').prop('hidden', true);
+                $('select[name="supplier"]').prop('hidden', false);
+           }else{
+                $('select[name="bulan"]').prop('hidden', true);
+                $('select[name="supplier"]').prop('hidden', true);
+           }
+        
+        }
+    </script> 
+@endsection
+

@@ -14,11 +14,14 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/bus">Bus & Elf</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/jenis">Jenis Kendaraan</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/kendaraan">Kendaraan</a></li>
+            {{-- <li class="nav-item"> <a class="nav-link" href="/transaksi">Transaksi</a></li> --}}
+            {{-- <li class="nav-item"> <a class="nav-link" href="/bus">Bus & Elf</a></li>
             <li class="nav-item"> <a class="nav-link" href="/rodaempat">Roda 4</a></li>
             <li class="nav-item"> <a class="nav-link" href="/rodadua">Roda 2</a></li>
             <li class="nav-item"> <a class="nav-link" href="/perlengkapan">Perlengkapan</a></li>
-          </ul>
+          </ul> --}}
         </div>
       </li>
       <li class="nav-item">
@@ -29,10 +32,11 @@
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/transaksi1">Bus & Elf</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/transaksi">Transaksi</a></li>
+            {{-- <li class="nav-item"><a class="nav-link" href="/transaksi1">Bus & Elf</a></li>
             <li class="nav-item"><a class="nav-link" href="/transaksi2">Roda 4</a></li>
             <li class="nav-item"><a class="nav-link" href="/transaksi3">Roda 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="/transaksi4">Perlengkapan</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transaksi4">Perlengkapan</a></li> --}}
           </ul>
         </div>
       </li>

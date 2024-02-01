@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kendaraan;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $data['kendaraan'] = Kendaraan::get()->count();
+        $data['bus'] = Kendaraan::where('jenis_id',1)->count();
+        $data['roda2'] = Kendaraan::where('jenis_id',2)->count();
+        $data['roda4'] = Kendaraan::where('jenis_id',3)->count();
+        $data['perlengkapan'] = Kendaraan::where('jenis_id',4)->count();
+        return view('dashboard',$data);
     }
 
     /**

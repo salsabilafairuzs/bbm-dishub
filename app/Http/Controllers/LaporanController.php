@@ -2,6 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
+use App\Models\Laporan;
+use App\Models\Transaksi;
+use App\Models\Transaksi1;
+use App\Models\Transaksi2;
+use App\Models\Transaksi3;
+use App\Models\Transaksi4;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -11,9 +18,7 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        
-        $data['laporan'] = Laporan::get();
-        return view('laporan.laporan', $data);
+        return view('laporan.laporan');
     }
 
     /**
@@ -29,20 +34,7 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        $laporan = new Laporan();
-        $laporan->no_pol = $request['no_pol'];
-        $laporan->jenis_bbm = $request['bbm'];
-        $laporan->nama_pemohon = $request['nama'];
-        $laporan->no_seri_kupon = $request['no_seri'];
-        $laporan->tanggal = $request['tanggal'];
-        $laporan->jumlah_liter = $request['jumlah'];
-        $laporan->jumlah_nominal= $request['jumlah_nominal'];
-
-        $laporan->bukti_pembayaran = $name;
-        
-        $laporan->save();
-
-        return redirect('/laporan');
+        //
     }   
     
 
@@ -78,5 +70,42 @@ class LaporanController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function cariLaporan(Request $request){
+        // return $request; die;
+        if($request['lanjut']){
+            if($request['filter'] == 'all'){
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+                return view('laporan.laporan',$data);
+    
+            }else{
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->get();
+                return view('laporan.laporan',$data);
+            }
+        }else{
+            if($request['filter'] == 'all'){
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+                $data['jumlah'] = Transaksi::sum('jumlah_nominal');
+                $no = 1;
+                // return $data['peminjaman']; die;
+                $pdf = PDF::loadView('laporan.laporan-pdf', $data);
+                $pdf->setPaper('A4', 'potret');
+                return $pdf->stream();
+    
+            }else{
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->get();
+                $data['jumlah'] = Transaksi::whereMonth('created_at',$request['bulan'])->sum('jumlah_nominal');
+                $no = 1;
+                // return $data['peminjaman']; die;
+                $pdf = PDF::loadView('laporan.laporan-pdf', $data);
+                $pdf->setPaper('A4', 'potret');
+                return $pdf->stream();
+            }
+        }
+        
+
+        // return $data;die;
+        
     }
 }
