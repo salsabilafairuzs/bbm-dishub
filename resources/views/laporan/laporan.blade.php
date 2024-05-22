@@ -82,7 +82,7 @@
                             <td>{{ $item->nama_pemohon }}</td>
                             <td>{{ $item->tanggal}}</td>
                             <td>{{ $item->no_seri_kupon }}</td>
-                            <td>{{ $item->jumlah_liter }}</td>
+                            <td>{{ $item->jumlah_nominal }}</td>
                         </tr>
                         @endforeach
                     @endisset

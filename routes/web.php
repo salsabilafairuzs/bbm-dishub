@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BbmController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -30,12 +31,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/kendaraan', KendaraanController::class);
     Route::get('kendaraan-hapus/{id}', [KendaraanController::class, 'destroy']);
 
+    Route::resource('/bbm', BbmController::class);
+    Route::get('bbm-hapus/{id}', [BbmController::class, 'destroy']);
+
     Route::resource('/transaksi', TransaksiController::class);
     Route::get('transaksi-hapus/{id}', [TransaksiController::class, 'destroy']);
     Route::get('detail-transaksi/{id}/show',[TransaksiController::class, 'show']);
 
     Route::resource('/laporan', LaporanController::class);
     Route::post('/laporan',[LaporanController::class,'cariLaporan']);
+
 });
 
 require __DIR__.'/auth.php';

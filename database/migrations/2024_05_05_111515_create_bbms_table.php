@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roda_duas', function (Blueprint $table) {
+        Schema::create('bbms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('no_pol');
-            $table->enum('jenis_bbm',['Pertamax', 'Dexlite'])->default('Pertamax');
-            $table->string('max_pengisian');
+            $table->string('jenis_bbm');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roda_duas');
+        Schema::dropIfExists('bbms');
     }
 };
