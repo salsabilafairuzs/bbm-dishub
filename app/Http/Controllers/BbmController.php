@@ -129,8 +129,8 @@ class BbmController extends Controller
         // 1. dia akan membuat variable , diamana variable ini isinya adalah dari model yang sudah kita cari value nya dengan parameter id
         // 2. lakukan delete dengan format variable->delete(); artinya data yang sudah kita pilih tadi akan di hapus dari databse kita
         // 3. return ke url /bbm diamana isinya adalah list bbm 
-        $jenis = Bbm::where('id', $id)->first();
-        $jenis->delete();
+        $bbm = Bbm::where('id', $id)->first();
+        $bbm->delete();
 
         return redirect('/bbm');
     }

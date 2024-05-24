@@ -15,8 +15,8 @@
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/jenis">Jenis Kendaraan</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/kendaraan">Kendaraan</a></li>
             <li class="nav-item"> <a class="nav-link" href="/bbm">Jenis BBM</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/kendaraan">Kendaraan</a></li>
             {{-- <li class="nav-item"> <a class="nav-link" href="/transaksi">Transaksi</a></li> --}}
             {{-- <li class="nav-item"> <a class="nav-link" href="/bus">Bus & Elf</a></li>
             <li class="nav-item"> <a class="nav-link" href="/rodaempat">Roda 4</a></li>
@@ -25,12 +25,12 @@
           </ul> --}}
         </div>
       </li>
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="/anggaran">
-          <i class="icon-paper menu-icon"></i>
+          <i class="fas fa-wallet" style="margin-right:18px;"></i>
           <span class="menu-title">Anggaran</span>
         </a>
-      </li> --}}
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/transaksi">
           <i class="fas fa-money-check-alt" style="margin-right:14px;"></i>
@@ -52,7 +52,7 @@
         </a>
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Ubah Password</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/change-password">Ubah Password</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Management User</a></li>
           </ul>
         </div>

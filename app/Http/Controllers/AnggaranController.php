@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggaran;
 use Illuminate\Http\Request;
 
 class AnggaranController extends Controller
@@ -11,7 +12,8 @@ class AnggaranController extends Controller
      */
     public function index()
     {
-        //
+        $data['anggaran'] = Anggaran::get();
+        return view('anggaran.anggaran',$data);
     }
 
     /**
@@ -19,7 +21,7 @@ class AnggaranController extends Controller
      */
     public function create()
     {
-        //
+        return view('anggaran.tambah');
     }
 
     /**
@@ -43,7 +45,8 @@ class AnggaranController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['anggaran'] = Anggaran::where('id', $id)->first();
+        return view('anggaran.edit', $data);
     }
 
     /**
@@ -59,6 +62,9 @@ class AnggaranController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $anggaran = Anggaran::where('id', $id)->first();
+        $anggaran->delete();
+
+        return redirect('/anggaran');
     }
 }
