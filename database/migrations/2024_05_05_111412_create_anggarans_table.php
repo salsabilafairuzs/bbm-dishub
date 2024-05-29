@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('anggarans', function (Blueprint $table) {
             $table->id();
+            $table->string('divisi');
+            $table->string('kegiatan');
+            $table->date('tanggal');
             $table->integer('anggaran');
             $table->timestamps();
         });
