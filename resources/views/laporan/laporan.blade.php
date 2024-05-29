@@ -4,7 +4,7 @@
       <div class="card shadow-lg">
         <div class="card-body">
           <div class="row">
-            <h4 class="card-title" style="margin-left:20px">Filter Laporan</h4>
+            <h1 class="card-title" style="margin-left:20px">Filter Laporan</h1>
           </div>
           <br>
           <form method="post" class="form-horizontal" id="formKategori" action="{{ url('/laporan')}}">
@@ -15,6 +15,7 @@
                     <select name="filter" class="custom-select" onchange="pilihFilter()">
                         <option value="all">All</option>
                         <option value="bulan">Bulan</option>
+                        <option value="tahun">Tahun</option>
                     </select>
                 </div>
 
@@ -34,14 +35,30 @@
                             <option value="12">Desember</option>
                     </select>
                 </div>
+
+                <div class="col-md-6">
+                    <select name="tahun" class="custom-select" style="margin-top:28px;">
+                            <option value="01">2020</option>
+                            <option value="02">2021</option>
+                            <option value="03">2022</option>
+                            <option value="04">2023</option>
+                            <option value="05">2024</option>
+                            <option value="06">2025</option>
+                            <option value="07">2026</option>
+                            <option value="08">2027</option>
+                            <option value="09">2028</option>
+                            <option value="10">2029</option>
+                            <option value="11">2030</option>
+                    </select>
+                </div>
             </div>
             <br>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="box-footer">
-                        <input type="submit" name="lanjut" class="btn btn-primary btn-sm" value="CARI">
+                        <input type="submit" name="lanjut" class="btn btn-primary btn-md" style=" margin-bottom:10px; padding:10px; border-radius:7px;" value="Cari">
                         {{-- <input type="submit" name="excel" class="btn btn-success btn-flat fa-file-excel-o" value=" &#xf1c3; EXCEL"> --}}
-                        <input type="submit" name="pdf" class="btn btn-danger btn-sm fa-file-excel-o" value=" &#xf1c3; Cetak">
+                        <input type="submit" name="pdf" class="btn btn-danger btn-md" style="margin-right:50px; margin-bottom:10px; padding:10px; border-radius:7px;" value=" &#xf1c3; Cetak">
                     </div>
                 </div>
                 
@@ -82,7 +99,7 @@
                             <td>{{ $item->nama_pemohon }}</td>
                             <td>{{ $item->tanggal}}</td>
                             <td>{{ $item->no_seri_kupon }}</td>
-                            <td>{{ $item->jumlah_liter }}</td>
+                            <td>{{ $item->jumlah_nominal }}</td>
                         </tr>
                         @endforeach
                     @endisset
@@ -102,6 +119,7 @@
         $(document).ready(function() {
             $('select[name="supplier"]').prop('hidden', true);
             $('select[name="bulan"]').prop('hidden', true); 
+            $('select[name="tahun"]').prop('hidden', true);
         })
         function pilihFilter(){
            var filter = $('select[name="filter"]').val()
@@ -109,12 +127,19 @@
            if(filter == 'bulan'){
                 $('select[name="bulan"]').prop('hidden', false);
                 $('select[name="supplier"]').prop('hidden', true);
+                $('select[name="tahun"]').prop('hidden', true);
            }else if(filter == 'supplier'){
                 $('select[name="bulan"]').prop('hidden', true);
                 $('select[name="supplier"]').prop('hidden', false);
+                $('select[name="tahun"]').prop('hidden', true);
+           }else if(filter == 'tahun') {
+                $('select[name="bulan"]').prop('hidden', true);
+                $('select[name="supplier"]').prop('hidden', true);
+                $('select[name="tahun"]').prop('hidden', false);
            }else{
                 $('select[name="bulan"]').prop('hidden', true);
                 $('select[name="supplier"]').prop('hidden', true);
+                $('select[name="tahun"]').prop('hidden', true);
            }
         
         }

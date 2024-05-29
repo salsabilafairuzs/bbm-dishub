@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perlengkapans', function (Blueprint $table) {
+        Schema::create('anggarans', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('jenis_bbm',['Dexlite','Pertamax'])->default('Dexlite');
-            $table->string('max_pengisian');
+            $table->string('divisi');
+            $table->string('kegiatan');
+            $table->date('tanggal');
+            $table->integer('anggaran');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('perlengkapans');
+        Schema::dropIfExists('anggarans');
     }
 };

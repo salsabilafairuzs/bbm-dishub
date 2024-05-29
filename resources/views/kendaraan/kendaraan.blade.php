@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>jenis Kendaraan</th>
+                            <th>Jenis Kendaraan</th>
                             <th>Nama Kendaraan</th>
                             <th>Nomor Polisi</th>
                             <th>Max Pengisian</th>
