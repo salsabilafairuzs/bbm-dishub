@@ -6,7 +6,7 @@
                 <div class="card shadow-lg" style="background-color:cadetblue;">
                     <div class="card-body">
                         <div class="row">
-                            <h1 class="card-title" style="margin-left:20px; color:white;">Saldo</h1>
+                            <h1 class="card-title" style="margin-left:20px; color:white;">Realisasi</h1>
                         </div>
                         <br>
                         <div class="row">
