@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbmController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AnggaranController;
@@ -45,9 +46,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/transaksi', TransaksiController::class);
     Route::get('transaksi-hapus/{id}', [TransaksiController::class, 'destroy']);
     Route::get('detail-transaksi/{id}/show',[TransaksiController::class, 'show']);
+    Route::post('ubah-status',[TransaksiController::class, 'ubahStatus'])->name('ubah-status');
 
     Route::resource('/laporan', LaporanController::class);
     Route::post('/laporan',[LaporanController::class,'cariLaporan']);
+
+    // Manajemen User
+    Route::get('manajemen-user',[UserController::class,'manajemenUser']);
+    Route::get('tambah-user',[UserController::class,'create']);
+    Route::get('edit-user/{id}',[UserController::class,'edit']);
+    Route::post('save-user',[UserController::class,'store']);
+    Route::post('update-user/{id}',[UserController::class,'update']);
+
 
 });
 

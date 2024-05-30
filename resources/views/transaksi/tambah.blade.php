@@ -4,29 +4,12 @@
     <div class="card shadow-lg">
         <div class="card-body">
                     <h4 class="card-title">Tambah Transaksi Kendaraan</h4>
-                    <form class="form-sample" action="{{url('transaksi')}}" method="POST" enctype="multipart/form-data">
+                <form class="form-sample" action="{{url('transaksi')}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('POST')
                         <p class="card-description">
                         Kendaraan
                         </p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Jenis Kendaraan</label>
-                                    <div class="col-sm-9">
-                                        {{-- <input type="text" class="form-control" name="name" value="{{ old('name') }}"/> --}}
-                                        <select name="jenis_kendaraan" class="form-control">
-                                            @foreach ($jenis as $item)
-                                                <option value="{{ $item->id }}">{{ $item->jenis_kendaraan }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('jenis_kendaraan'))
-                                            <span class="text-danger">{{ $errors->first('jenis_kendaraan') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -45,8 +28,9 @@
                                 <label class="col-sm-3 col-form-label">Jenis BBM</label>
                                 <div class="col-sm-9">
                                     <select class="form-control" name="bbm">
-                                    <option>Dexlite</option>
-                                    <option>Pertamax</option>
+                                        @foreach ($bbm as $bbms)
+                                            <option value="{{ $bbms->jenis_bbm }}">{{ $bbms->jenis_bbm }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 </div>

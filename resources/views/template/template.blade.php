@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('backend/css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('backend/images/dishub.png') }}" />
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css " rel="stylesheet">
 </head>
 <body>
   <div class="container-scroller">
@@ -32,7 +33,7 @@
       <!-- partial -->
       @include('template.konten')
       <!-- main-panel ends -->
-    </div>   
+    </div>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -57,9 +58,9 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('backend/js/dashboard.js') }}"></script>
   <script src="{{ asset('backend/js/Chart.roundedBarCharts.js') }}"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js "></script>
   @yield('script')
   <!-- End custom js for this page-->
 </body>
 
 </html>
-

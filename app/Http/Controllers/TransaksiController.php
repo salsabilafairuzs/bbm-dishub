@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
+use App\Models\Bbm;
 use App\Models\Kendaraan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use App\Models\JenisKendaraan;
-use Validator;
 
 class TransaksiController extends Controller
 {
@@ -25,6 +26,7 @@ class TransaksiController extends Controller
     public function create()
     {
         $data['jenis'] = JenisKendaraan::get();
+        $data['bbm'] = Bbm::get();
         $data['kendaraan'] = Kendaraan::get();
         return view('transaksi.tambah',$data);
     }
@@ -41,7 +43,7 @@ class TransaksiController extends Controller
             'jumlah' => ['required','numeric'],
             'jumlah_nominal' => ['required','numeric'],
             'foto' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
-    
+
         ],[
             'nama.required'=> 'Nama wajib diisi !',
             'tanggal.required'=> 'Tanggal wajib diisi !',
@@ -63,9 +65,12 @@ class TransaksiController extends Controller
         }else{
             $file = $request->file('foto');
             $count = Transaksi::where('no_pol',$request['nopol'])->count() + 1;
+            $cari = Kendaraan::where('no_pol',$request->input('no_pol'))->first();
+
+            // return $cari;
 
             $transaksi = new Transaksi();
-            $transaksi->jenis_id = $request['jenis_kendaraan'];
+            $transaksi->jenis_id = $cari->jenis_id;
             $transaksi->no_pol = $request['no_pol'];
             $transaksi->jenis_bbm = $request['bbm'];
             $transaksi->nama_pemohon = $request['nama'];
@@ -74,14 +79,14 @@ class TransaksiController extends Controller
             $transaksi->jumlah_liter = $request['jumlah'];
             $transaksi->jumlah_nominal= $request['jumlah_nominal'];
 
-            $name = 'buktiFoto-'.$transaksi->no_pol.$count.'.png';
+            $name = 'buktiFoto-'.time().$transaksi->no_pol.$count.'.png';
             $image['filePath'] = $name;
             $file->move(public_path().'/buktiTransaksi', $name);
-            
+
             $transaksi->bukti_pembayaran = $name;
-            
+
             $transaksi->save();
-        }   
+        }
         return redirect('/transaksi');
     }
 
@@ -142,5 +147,28 @@ class TransaksiController extends Controller
             unlink($file_path);
         }
         return redirect('/transaksi');
+    }
+
+    public function ubahStatus(Request $request) {
+        // return $request;
+        if($request['acc']){
+            $transaksi = Transaksi::where('id', $request['id'])->first();
+            $transaksi->alasan = $request['alasan'];
+            $transaksi->status = 'acc';
+            $transaksi->update();
+            return redirect('/transaksi');
+        }elseif($request['revisi']){
+            $transaksi = Transaksi::where('id', $request['id'])->first();
+            $transaksi->alasan = $request['alasan'];
+            $transaksi->status = 'revisi';
+            $transaksi->update();
+            return redirect('/transaksi');
+        }else{
+            $transaksi = Transaksi::where('id', $request['id'])->first();
+            $transaksi->alasan = $request['alasan'];
+            $transaksi->status = 'ditolak';
+            $transaksi->update();
+            return redirect('/transaksi');
+        }
     }
 }

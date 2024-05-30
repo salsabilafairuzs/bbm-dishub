@@ -35,8 +35,8 @@ class LaporanController extends Controller
     public function store(Request $request)
     {
         //
-    }   
-    
+    }
+
 
 
 
@@ -73,39 +73,59 @@ class LaporanController extends Controller
     }
 
     public function cariLaporan(Request $request){
-        // return $request; die;
         if($request['lanjut']){
             if($request['filter'] == 'all'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
                 return view('laporan.laporan',$data);
-    
-            }else{
+            }else if($request['filter'] == 'bulan'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->get();
                 return view('laporan.laporan',$data);
+            }else if($request['filter'] == 'tahun'){
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('created_at',intval($request['tahun']))->get();
+                return view('laporan.laporan',$data);
+            }else{
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->whereYear('created_at',intval($request['tahun']))->get();
+                return view('laporan.laporan',$data);
             }
+
         }else{
             if($request['filter'] == 'all'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
                 $data['jumlah'] = Transaksi::sum('jumlah_nominal');
                 $no = 1;
-                // return $data['peminjaman']; die;
                 $pdf = PDF::loadView('laporan.laporan-pdf', $data);
                 $pdf->setPaper('A4', 'potret');
                 return $pdf->stream();
-    
-            }else{
+
+            }else if($request['filter'] == 'bulan'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->get();
                 $data['jumlah'] = Transaksi::whereMonth('created_at',$request['bulan'])->sum('jumlah_nominal');
+
                 $no = 1;
-                // return $data['peminjaman']; die;
+                $pdf = PDF::loadView('laporan.laporan-pdf', $data);
+                $pdf->setPaper('A4', 'potret');
+                return $pdf->stream();
+            }else if($request['filter'] == 'tahun'){
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('created_at',intval($request['tahun']))->get();
+                $data['jumlah'] = Transaksi::whereYear('created_at',intval($request['tahun']))->sum('jumlah_nominal');
+
+                $no = 1;
+                $pdf = PDF::loadView('laporan.laporan-pdf', $data);
+                $pdf->setPaper('A4', 'potret');
+                return $pdf->stream();
+            }
+            else{
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('created_at',$request['bulan'])->whereYear('created_at',intval($request['tahun']))->get();
+                $data['jumlah'] = Transaksi::whereMonth('created_at',$request['bulan'])->whereYear('created_at',intval($request['tahun']))->sum('jumlah_nominal');
+                $no = 1;
                 $pdf = PDF::loadView('laporan.laporan-pdf', $data);
                 $pdf->setPaper('A4', 'potret');
                 return $pdf->stream();
             }
         }
-        
+
 
         // return $data;die;
-        
+
     }
 }

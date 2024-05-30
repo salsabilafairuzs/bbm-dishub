@@ -6,6 +6,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
+      @role(['superadmin','admin'])
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-layout menu-icon"></i>
@@ -25,24 +26,33 @@
           </ul> --}}
         </div>
       </li>
+      @endrole
+
+      @role(['bendahara'])
       <li class="nav-item">
         <a class="nav-link" href="/anggaran">
           <i class="fas fa-wallet" style="margin-right:18px;"></i>
           <span class="menu-title">Anggaran</span>
         </a>
       </li>
+      @endrole
+
+
       <li class="nav-item">
         <a class="nav-link" href="/transaksi">
           <i class="fas fa-money-check-alt" style="margin-right:14px;"></i>
           <span class="menu-title">Transaksi</span>
         </a>
       </li>
+
+      @role(['superadmin','admin'])
       <li class="nav-item">
         <a class="nav-link" href="/laporan">
           <i class="icon-paper menu-icon"></i>
           <span class="menu-title">Laporan</span>
         </a>
       </li>
+      @endrole
 
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
@@ -53,7 +63,9 @@
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/change-password">Ubah Password</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Management User</a></li>
+            @role(['superadmin'])
+                <li class="nav-item"> <a class="nav-link" href="/manajemen-user">Management User</a></li>
+            @endrole
           </ul>
         </div>
       </li>

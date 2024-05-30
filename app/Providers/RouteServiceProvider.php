@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/dashboard';
+    protected $redirectTo = '/login'; // Ganti '/login' dengan halaman login yang ingin Anda arahkan setelah logout
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.

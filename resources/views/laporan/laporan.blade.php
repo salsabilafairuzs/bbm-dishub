@@ -13,13 +13,14 @@
                 <div class="col-md-6">
                     <label>Filter by</label>
                     <select name="filter" class="custom-select" onchange="pilihFilter()">
-                        <option value="all">All</option>
-                        <option value="bulan">Bulan</option>
-                        <option value="tahun">Tahun</option>
+                        <option value="all" @isset($_POST['filter']) @if($_POST['filter'] == 'all') selected @endif @endisset>All</option>
+                        <option value="periode" @isset($_POST['filter']) @if($_POST['filter'] == 'periode') selected @endif @endisset>Periode</option>
+                        <option value="bulan" @isset($_POST['filter']) @if($_POST['filter'] == 'bulan') selected @endif @endisset>Bulan</option>
+                        <option value="tahun" @isset($_POST['filter']) @if($_POST['filter'] == 'tahun') selected @endif @endisset>Tahun</option>
                     </select>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3" id="bulan">
                     <select name="bulan" class="custom-select" style="margin-top:28px;">
                             <option value="01">Januari</option>
                             <option value="02">Februari</option>
@@ -36,19 +37,19 @@
                     </select>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3" id="tahun">
                     <select name="tahun" class="custom-select" style="margin-top:28px;">
-                            <option value="01">2020</option>
-                            <option value="02">2021</option>
-                            <option value="03">2022</option>
-                            <option value="04">2023</option>
-                            <option value="05">2024</option>
-                            <option value="06">2025</option>
-                            <option value="07">2026</option>
-                            <option value="08">2027</option>
-                            <option value="09">2028</option>
-                            <option value="10">2029</option>
-                            <option value="11">2030</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
                     </select>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                         <input type="submit" name="pdf" class="btn btn-danger btn-md" style="margin-right:50px; margin-bottom:10px; padding:10px; border-radius:7px;" value=" &#xf1c3; Cetak">
                     </div>
                 </div>
-                
+
             </div>
         </form>
         </div>
@@ -75,7 +76,7 @@
           <br>
             <table class="table table-striped">
                 <thead>
-                    
+
                     <tr>
                         <th>No.</th>
                         <th>Jenis Kendaraan</th>
@@ -117,32 +118,28 @@
 @section('script')
    <script>
         $(document).ready(function() {
-            $('select[name="supplier"]').prop('hidden', true);
-            $('select[name="bulan"]').prop('hidden', true); 
-            $('select[name="tahun"]').prop('hidden', true);
+            $('#bulan').prop('hidden', true);
+            $('#tahun').prop('hidden', true);
         })
+
         function pilihFilter(){
            var filter = $('select[name="filter"]').val()
-            
-           if(filter == 'bulan'){
-                $('select[name="bulan"]').prop('hidden', false);
-                $('select[name="supplier"]').prop('hidden', true);
-                $('select[name="tahun"]').prop('hidden', true);
-           }else if(filter == 'supplier'){
-                $('select[name="bulan"]').prop('hidden', true);
-                $('select[name="supplier"]').prop('hidden', false);
-                $('select[name="tahun"]').prop('hidden', true);
-           }else if(filter == 'tahun') {
-                $('select[name="bulan"]').prop('hidden', true);
-                $('select[name="supplier"]').prop('hidden', true);
-                $('select[name="tahun"]').prop('hidden', false);
-           }else{
-                $('select[name="bulan"]').prop('hidden', true);
-                $('select[name="supplier"]').prop('hidden', true);
-                $('select[name="tahun"]').prop('hidden', true);
-           }
-        
-        }
-    </script> 
-@endsection
 
+           if(filter == 'bulan'){
+                $('#bulan').prop('hidden', false);
+                $('#tahun').prop('hidden', true);
+           }else if(filter == "tahun"){
+                $('#bulan').prop('hidden', true);
+                $('#tahun').prop('hidden', false);
+           }else if(filter == 'periode'){
+                $('#bulan').prop('hidden', false);
+                $('#tahun').prop('hidden', false);
+           }else{
+                $('#bulan').prop('hidden', true);
+                $('#tahun').prop('hidden', true);
+           }
+
+
+        }
+    </script>
+@endsection
