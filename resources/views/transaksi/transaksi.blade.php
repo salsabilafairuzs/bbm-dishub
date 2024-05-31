@@ -224,7 +224,7 @@
                 $('input[name="jumlah"]').val(data.data.jumlah_nominal)
                 $('input[name="alasan"]').val(data.data.alasan)
                 var status = data.data.status;
-                if (status !== 'proses') {
+                if (status !== 'proses' || status !== 'revisi') {
                     $('input[name="acc"]').attr('hidden', true);
                     $('input[name="revisi"]').attr('hidden', true);
                     $('input[name="tolak"]').attr('hidden', true);
