@@ -1,5 +1,4 @@
-
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -25,19 +24,10 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Remember Me -->
-        {{-- <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div> --}}
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                {{-- <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a> --}}
+
             @endif
 
             <x-primary-button class="ms-3">
@@ -45,4 +35,85 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login Dishub</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{ asset('backend/vendors/feather/feather.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/vendors/ti-icons/css/themify-icons.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/vendors/css/vendor.bundle.base.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('backend/css/vertical-layout-light/style.css') }}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="text-center">
+                <img src="{{ asset('backend/images/dishub.png') }}" width="20%" height="10%" alt="logo">
+              </div>
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+
+              <h4 class="font-weight-bold text-center">Silahkan Login</h4>
+
+              <form class="pt-3" method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" placeholder="Email" name="email">
+                <span class="mt-2 text-danger">
+                    @foreach ($errors->get('email') as $message)
+                        {{ $message }}
+                    @endforeach
+                </span>
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control form-control-lg"placeholder="Password">
+                  <span class="mt-2 text-danger">
+                    @foreach ($errors->get('password') as $message)
+                        {{ $message }}
+                    @endforeach
+                </span>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Masuk</button>
+                  {{-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">Masuk</a> --}}
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{ asset('backend/vendors/js/vendor.bundle.base.js') }}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{ asset('backend/js/off-canvas.js') }}"></script>
+  <script src="{{ asset('backend/js/hoverable-collapse.js') }}"></script>
+  <script src="{{ asset('backend/js/template.js') }}"></script>
+  <script src="{{ asset('backend/js/settings.js') }}"></script>
+  <script src="{{ asset('backend/js/todolist.js') }}"></script>
+  <!-- endinject -->
+</body>
+
+</html>

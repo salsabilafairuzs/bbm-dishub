@@ -59,7 +59,7 @@
                     <div class="box-footer">
                         <input type="submit" name="lanjut" class="btn btn-primary btn-md" style=" margin-bottom:10px; padding:10px; border-radius:7px;" value="Cari">
                         {{-- <input type="submit" name="excel" class="btn btn-success btn-flat fa-file-excel-o" value=" &#xf1c3; EXCEL"> --}}
-                        <input type="submit" name="pdf" class="btn btn-danger btn-md" style="margin-right:50px; margin-bottom:10px; padding:10px; border-radius:7px;" value=" &#xf1c3; Cetak">
+                        <input type="submit" name="pdf" class="btn btn-danger btn-md" style="margin-right:50px; margin-bottom:10px; padding:10px; border-radius:7px;" value="Cetak">
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@
                             <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
                             <td>{{ $item->no_pol }}</td>
                             <td>{{ $item->nama_pemohon }}</td>
-                            <td>{{ $item->tanggal}}</td>
+                            <td>{{ valid_date_tanggal($item->tanggal)}}</td>
                             <td>{{ $item->no_seri_kupon }}</td>
                             <td>{{ $item->jumlah_nominal }}</td>
                         </tr>

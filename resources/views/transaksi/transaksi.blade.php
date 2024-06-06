@@ -31,7 +31,7 @@
                             <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
                             <td>{{ $item->no_pol }}</td>
                             <td>{{ $item->nama_pemohon }}</td>
-                            <td>{{ $item->tanggal }}</td>
+                            <td>{{ valid_date_tanggal($item->tanggal) }}</td>
                             <td>{{ $item->jumlah_nominal }}</td>
                             <td><img src="{{ asset('buktiTransaksi/' . $item->bukti_pembayaran) }}" style="border-radius: 6px;" width="90px" height="78%"></td>
                             <td>
@@ -221,7 +221,7 @@
                 $('input[name="liter"]').val(data.data.jumlah_liter)
                 $('input[name="jumlah"]').val(data.data.jumlah_nominal)
                 $('input[name="alasan"]').val(data.data.alasan)
-                var status = data.data.status; 
+                var status = data.data.status;
                 if (status !== 'proses') {
                     $('input[name="acc"]').attr('hidden', true);
                     $('input[name="revisi"]').attr('hidden', true);

@@ -58,6 +58,8 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('backend/js/dashboard.js') }}"></script>
   <script src="{{ asset('backend/js/Chart.roundedBarCharts.js') }}"></script>
+  {{-- <script src="{{ asset('backend/') }}vendors/chart.js/Chart.min.js"></script> --}}
+  <script src="{{ asset('backend/js/chart.js') }}"></script>
   <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js "></script>
   @yield('script')
   <!-- End custom js for this page-->

@@ -27,7 +27,7 @@
     <table class="tabel" style="width: 100%; margin-left: 10px;">
         <tr>
             <td class="text-center" style="width:30%; font-weight: bold;">
-                <img src="{{ asset('backend/images/dishub.png') }}" style="width: 50px; margin-top: 20px; float: left;">
+                {{-- <img src="{{ asset('backend/images/dishub.png') }}" style="width: 50px; margin-top: 20px; float: left;"> --}}
             </td>
             <td style="width:30%;">
 
@@ -39,8 +39,8 @@
     <div class="row">
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
-            <h5 class="text-center">Dishub kota Madiun</h5>
-            <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo,  <br> Kec. Manguharjo, Kota Madiun, Jawa Timur</p>
+            <h5 class="text-center">Perusahaan Umum Daerah Aneka Usaha</h5>
+            <p class="text-center">Jl. A. Yani No.11, Pangongangan, <br> Kec. Manguharjo, Kota Madiun, Jawa Timur 63121</p>
 
             <hr>
         </div>
@@ -52,11 +52,10 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Jenis Kendaraan</th>
                     <th>Tanggal</th>
-                    <th>Nopol</th>
+                    <th>Nomor Polisi</th>
                     <th>Jenis BBM</th>
-                    <th>Jumlah Liter</th>
+                    <th>Jumlah liter</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -68,8 +67,7 @@
                     @foreach ($transaksi as $item)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $item['jenisKendaraan']->jenis_kendaraan}}</td>
-                        <td>{{ valid_date_tanggal($item->tanggal) }}</td>
+                        <td>{{valid_date_tanggal($item->tanggal)}}</td>
                         <td>{{ $item->no_pol }}</td>
                         <td>{{ $item->jenis_bbm }}</td>
                         <td>{{ $item->jumlah_liter }}</td>
@@ -86,6 +84,22 @@
             <tfoot>
                 <tr>
                     <th class="text-right" colspan="5">
+                        pengeluaran Pertamax
+                    </th>
+                    <th class="text-right">
+                        {{ $pertamax }} Liter
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text-right" colspan="5">
+                        pengeluaran Dexlite
+                    </th>
+                    <th class="text-right">
+                        {{ $dexlite }} Liter
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text-right" colspan="5">
                         Total Pengeluaran (Rp)
                     </th>
                     <th class="text-right">
@@ -95,7 +109,9 @@
             </tfoot>
         </table>
 
-        {{-- <table class="table table-responsive">
+        {{-- tabel bukti struk pembayaran --}}
+        <hr>
+        <table class="table table-responsive">
             <tbody>
                 @php
                     $no = 1;
@@ -110,7 +126,7 @@
                     <tr>
                 @endif
 
-                <td><img src="{{ asset('buktiTransaksi/'.$itemm->bukti_pembayaran) }}" alt=""></td>
+                <td><img src="{{ asset('buktiTransaksi/'.$itemm->bukti_pembayaran) }}" width="50%" alt=""></td>
 
                 @if ($counter % 3 == 2 || $loop->last)
                     </tr>
@@ -122,7 +138,30 @@
             @endforeach
                 @endisset
             </tbody>
-        </table> --}}
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table class="table table-responsive">
+            <tfoot>
+                <tr>
+                    <th class="text-right" colspan="">
+                        Madiun, .............
+                    </th>
+                    <th></th>
+                </tr>
+              <br>
+              <br>
+              <br>
+              <br>
+                <tr>
+                    <th class="text-right" colspan="">
+                        Sri Wahyuni, SE
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
   </body>
 </html>

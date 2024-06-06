@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-user/{id}',[UserController::class,'edit']);
     Route::post('save-user',[UserController::class,'store']);
     Route::post('update-user/{id}',[UserController::class,'update']);
+    Route::get('user-hapus/{id}',[UserController::class,'destroy']);
 
 
 });

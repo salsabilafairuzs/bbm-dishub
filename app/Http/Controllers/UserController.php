@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -86,5 +87,14 @@ class UserController extends Controller
     public function changePassword()
     {
         return view('auth.change-password');
+    }
+
+    public function destroy($id){
+        if ($id == Auth::user()->id) {
+            return redirect('manajemen-user')->with('error', 'Gagal menghapus data!');
+        } else {
+            $admin = User::where('id', $id)->delete();
+            return redirect('manajemen-user')->with('success', 'Berhasil menghapus data!');
+        }
     }
 }

@@ -45,14 +45,12 @@
         </a>
       </li>
 
-      @role(['superadmin','admin'])
       <li class="nav-item">
         <a class="nav-link" href="/laporan">
           <i class="icon-paper menu-icon"></i>
           <span class="menu-title">Laporan</span>
         </a>
       </li>
-      @endrole
 
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
