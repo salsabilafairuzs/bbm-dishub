@@ -47,9 +47,8 @@
                                 <a href="{{url('/anggaran/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Pengajuan</a>
                                 <table class="table table-striped table-bordered">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>No</th>
-                                            <th>Divisi</th>
                                             <th>Kegiatan</th>
                                             <th>Tanggal Realisasi</th>
                                             <th>Jumlah Anggaran</th>
@@ -60,7 +59,6 @@
                                         @foreach ($anggaran as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>  
-                                            <td>{{ $item->divisi }}</td>
                                             <td>{{ $item->kegiatan }}</td>
                                             <td>{{ $item->tanggal }}</td>
                                             <td>{{ $item->anggaran }}</td>

@@ -12,13 +12,12 @@
                       {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
                     <table class="table table-striped table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th>No</th>
                                 <th>Jenis Kendaraan</th>
                                 <th>Nomor Polisi</th>
                                 <th>Nama</th>
                                 <th>Tanggal</th>
-                                <th>No Seri Kupon</th>
                                 <th>Jumlah</th>
                                 <th>Foto</th>
                                 <th>Status</th>
@@ -33,7 +32,6 @@
                             <td>{{ $item->no_pol }}</td>
                             <td>{{ $item->nama_pemohon }}</td>
                             <td>{{ $item->tanggal }}</td>
-                            <td>{{ $item->no_seri_kupon}}</td>
                             <td>{{ $item->jumlah_nominal }}</td>
                             <td><img src="{{ asset('buktiTransaksi/' . $item->bukti_pembayaran) }}" style="border-radius: 6px;" width="90px" height="78%"></td>
                             <td>
@@ -128,7 +126,7 @@
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                      <img id="gambarBukti" width="25%" alt="">
+                      <img id="gambarBukti" width="50%" alt="">
                     </div>
                   </div>
 
@@ -223,12 +221,19 @@
                 $('input[name="liter"]').val(data.data.jumlah_liter)
                 $('input[name="jumlah"]').val(data.data.jumlah_nominal)
                 $('input[name="alasan"]').val(data.data.alasan)
-                var status = data.data.status;
-                if (status !== 'proses' || status !== 'revisi') {
+                var status = data.data.status; 
+                if (status !== 'proses') {
                     $('input[name="acc"]').attr('hidden', true);
                     $('input[name="revisi"]').attr('hidden', true);
                     $('input[name="tolak"]').attr('hidden', true);
                     $('input[name="alasan"]').attr('disabled',true)
+                }
+
+                if (status == 'revisi') {
+                    $('input[name="acc"]').attr('hidden', false);
+                    $('input[name="revisi"]').attr('hidden', false);
+                    $('input[name="tolak"]').attr('hidden', false);
+                    $('input[name="alasan"]').attr('disabled',false)
                 }
                 $('#gambarBukti').attr('src', '/buktiTransaksi/'+data.data.bukti_pembayaran);
             });

@@ -9,19 +9,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Divisi</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="divisi" value="{{ old('divisi') }}"/>
-                                        @if ($errors->has('divisi'))
-                                            <span class="text-danger">{{ $errors->first('divisi') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Kegiatan</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="kegiatan" value="{{ old('kegiatan') }}"/>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfilWebController extends Controller
+class KecelakaanController extends Controller
 {
     /**
      * Display a listing of the resource.

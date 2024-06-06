@@ -12,7 +12,7 @@
                   <a href="{{url('/bbm/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
                   <table class="table table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>No</th>
                             <th>Jenis BBM</th>
                             <th>Aksi</th>
@@ -20,7 +20,7 @@
                     </thead>
                     <tbody>
                       @foreach ($bbm as $item)
-                        <tr>
+                        <tr class="text-center">
                           <td>{{ $loop->iteration }}</td>  
                           <td>{{ $item->jenis_bbm }}</td>
                             <td>

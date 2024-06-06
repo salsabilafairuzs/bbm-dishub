@@ -12,7 +12,7 @@
                   <a href="{{url('/kendaraan/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
                   <table class="table table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>No</th>
                             <th>Jenis Kendaraan</th>
                             <th>Nama Kendaraan</th>
@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                       @foreach ($kendaraan as $item)
-                        <tr>
+                        <tr class="text-center">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
                             <td>{{ $item->name }}</td>

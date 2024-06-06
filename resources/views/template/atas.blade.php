@@ -29,6 +29,7 @@
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
             <img src="/backend/images/dishub.png" alt="profile" class="mr-2" />
           </a>
+          
           <p class="text-dark ms-2">{{ Auth::user()->name }}</p>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <form method="POST" action="{{ route('logout') }}">

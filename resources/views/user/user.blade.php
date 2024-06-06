@@ -4,17 +4,18 @@
         <div class="card shadow-lg">
             <div class="card-body">
                 <div class="row">
-                <h4 class="card-title" style="margin-left:20px">List Data User</h4>
+                <h4 class="card-title" style="margin-left:20px">Data User</h4>
                     <div class="col-md-12">
                       <a href="{{url('/tambah-user')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
                       {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Email</th>
                                     <th>Role</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -22,9 +23,14 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
                                     <td>{{ $item['roles'][0]->name }}</td>
-                                    <td class="text-center"><a href="{{ url('edit-user',$item->id) }}" class="btn btn-sm btn-primary">Edit</a></td>
-                                </tr>
+                                    {{-- <td class="text-center"><a href="{{ url('edit-user',$item->id) }}" class="btn btn-sm btn-primary">Edit</a></td> --}}
+                                    <td>
+                                      <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('edit-user',$item->id) }}"><i class="fas fa-edit"></i></a>
+                                      <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('user-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                  </tr>
                                 @endforeach
 
                             </tbody>

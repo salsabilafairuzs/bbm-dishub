@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbmController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AnggaranController;
@@ -50,6 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('/laporan', LaporanController::class);
     Route::post('/laporan',[LaporanController::class,'cariLaporan']);
+
+    Route::resource('/profil', ProfilController::class);
 
     // Manajemen User
     Route::get('manajemen-user',[UserController::class,'manajemenUser']);

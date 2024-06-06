@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
 use Illuminate\Http\Request;
 
-class ProgramController extends Controller
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data['profil'] = Profil::get();
+        return view('profil.profil',$data);
     }
 
     /**
