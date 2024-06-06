@@ -53,6 +53,21 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#history" aria-expanded="false" aria-controls="history">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">History</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="history">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/history-acc">ACC</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/history-revisi">Revisi</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/history-tolak">Tolak</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">User Setting</span>

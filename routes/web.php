@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbmController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AnggaranController;
@@ -63,6 +64,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user-hapus/{id}',[UserController::class,'destroy']);
 
 
+    Route::get('/history-acc',[HistoryController::class,'acc']);
+    Route::get('/history-revisi',[HistoryController::class,'revisi']);
+    Route::get('/history-tolak',[HistoryController::class,'tolak']);
 });
 
 require __DIR__.'/auth.php';

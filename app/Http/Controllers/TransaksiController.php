@@ -8,6 +8,7 @@ use App\Models\Kendaraan;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use App\Models\JenisKendaraan;
+use Illuminate\Support\Facades\Auth;
 
 class TransaksiController extends Controller
 {
@@ -16,7 +17,12 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+        if(Auth::user()->roles()->first()->name == 'bendahara'){
+            $data['transaksi'] = Transaksi::where('status','proses')->with('jenisKendaraan')->get();
+        }else{
+            $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+        }
+
         return view('transaksi.transaksi',$data);
     }
 

@@ -6,9 +6,6 @@
                 <div class="row">
                 <h4 class="card-title" style="margin-left:20px">Data Transaksi Kendaraan</h4>
                     <div class="col-md-12">
-                    @role(['admin','superadmin'])
-                        <a href="{{url('/transaksi/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
-                    @endrole
                       {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
                     <table class="table table-striped table-bordered">
                         <thead>
@@ -48,9 +45,7 @@
                             <td>
                                 <a class="btn btn-warning btn-sm" style="border-radius:4px;" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
                                 @if ($item->status == 'revisi')
-                                    @role(['admin','superadmin'])
                                     <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('transaksi/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
-                                    @endrole
                                 @endif
                                 {{-- <a class="btn btn-danger btn-sm" style="border-radius:4px;" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('transaksi-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a> --}}
                             </td>
