@@ -2,22 +2,37 @@
 @section('konten')
     <div class="content-wrapper">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card shadow-lg" style="background-color:cadetblue;">
                     <div class="card-body">
                         <div class="row">
-                            <h1 class="card-title" style="margin-left:20px; color:white;">Realisasi</h1>
+                            <h1 class="card-title" style="margin-left:20px; color:white;">Penggunaan</h1>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <h3 style="color:white;"> Rp 12.000.000</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <div class="card shadow-lg" style="background-color:coral">
+                    <div class="card-body">
+                        <div class="row">
+                            <h1 class="card-title" style="margin-left:20px; color:white;">Saldo</h1>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3 style="color:white;">Rp 450.000.000</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <div class="card shadow-lg" style="background-color:royalblue;">
                     <div class="card-body">
                         <div class="row">
@@ -25,7 +40,7 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <h3 style="color:white;">Rp 450.000.000</h3>
                             </div>
                         </div>
