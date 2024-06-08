@@ -76,23 +76,23 @@ class LaporanController extends Controller
     public function cariLaporan(Request $request){
         if($request['lanjut']){
             if($request['filter'] == 'all'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->where('status','acc')->orderBy('tanggal','ASC')->get();
                 return view('laporan.laporan',$data);
             }else if($request['filter'] == 'bulan'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->where('status','acc')->orderBy('tanggal','ASC')->get();
                 return view('laporan.laporan',$data);
             }else if($request['filter'] == 'tahun'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('tanggal',intval($request['tahun']))->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
                 return view('laporan.laporan',$data);
             }else{
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->whereYear('created_at',intval($request['tahun']))->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->whereYear('created_at',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
                 return view('laporan.laporan',$data);
             }
 
         }else{
 
             if($request['filter'] == 'all'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->where('status','acc')->orderBy('tanggal','ASC')->get();
                 $data['jumlah'] = Transaksi::sum('jumlah_nominal');
                 $data['dexlite'] = Transaksi::where('jenis_bbm','Dexlite')->sum('jumlah_liter');
                 $data['pertamax'] = Transaksi::where('jenis_bbm','Pertamax')->sum('jumlah_liter');
@@ -107,7 +107,7 @@ class LaporanController extends Controller
                 return $pdf->stream();
 
             }else if($request['filter'] == 'bulan'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->where('status','acc')->orderBy('tanggal','ASC')->get();
                 $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->sum('jumlah_nominal');
                 $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
                 $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
@@ -123,7 +123,7 @@ class LaporanController extends Controller
                 $pdf->setPaper('A4', 'potret');
                 return $pdf->stream();
             }else if($request['filter'] == 'tahun'){
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('tanggal',intval($request['tahun']))->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
                 $data['jumlah'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->sum('jumlah_nominal');
                 $data['dexlite'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
                 $data['pertamax'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
@@ -139,7 +139,7 @@ class LaporanController extends Controller
                 return $pdf->stream();
             }
             else{
-                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->get();
+                $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
                 $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->sum('jumlah_nominal');
                 $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
                 $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Pertamax')->sum('jumlah_liter');

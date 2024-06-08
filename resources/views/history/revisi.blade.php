@@ -44,9 +44,11 @@
                             </td>
                             <td>
                                 <a class="btn btn-warning btn-sm" style="border-radius:4px;" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
+                                @role(['administrator','superadmin'])
                                 @if ($item->status == 'revisi')
                                     <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('transaksi/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
                                 @endif
+                                @endrole
                                 {{-- <a class="btn btn-danger btn-sm" style="border-radius:4px;" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('transaksi-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a> --}}
                             </td>
                         </tr>
@@ -131,11 +133,6 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">Close</button>
-                    @role(['bendahara'])
-                        <input type="submit" name="acc" value="Acc" onclick="accc()" class="btn btn-success text-white" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
-                        <input type="submit" name="revisi" value="Revisi" onclick="revisii()" class="btn btn-warning" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
-                        <input type="submit" name="tolak" value="Tolak" onclick="tolakk()" class="btn btn-danger" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
-                    @endrole
               </div>
             </div>
         </form>

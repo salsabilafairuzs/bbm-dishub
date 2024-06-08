@@ -4,29 +4,11 @@
     <div class="card shadow-lg">
         <div class="card-body">
                     <h4 class="card-title">Transaksi Kendaraan</h4>
-                    <form class="form-sample" action="{{url('transaksi/'.$transaksi->id)}}" method="POST">
+                    <form class="form-sample" action="{{url('transaksi/'.$transaksi->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PATCH')
                         <p class="card-description">
                         Kendaraan
-                        </p>      
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Jenis Kendaraan</label>
-                                <div class="col-sm-9">
-                                    {{-- <input type="text" class="form-control" name="tanggal" value="{{ $transaksi->jenis_kendaraan }}"/> --}}
-                                    <select name="jenis_kendaraan" class="form-control">
-                                        @foreach ($jenis as $item)
-                                            <option value="{{ $item->id }}">{{ $item->jenis_kendaraan }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('jenis_kendaraan'))
-                                        <span class="text-danger">{{ $errors->first('jenis_kendaraan') }}</span>
-                                    @endif
-                                </div>
-                                </div>
-                            </div> 
-                        </div>                    
+                        </p>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -94,14 +76,27 @@
                         </div>
                         </div>
                         <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Jumlah Nominal</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="jumlah_nominal" value="{{ $transaksi->jumlah_nominal }}"/>
-                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Jumlah Nominal</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="jumlah_nominal" value="{{ $transaksi->jumlah_nominal }}"/>
+                                </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Bukti Pembayaran<sup class="text-danger">*</sup></label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control" name="foto"/>
+                                        @if ($errors->has('foto'))
+                                            <span class="text-danger">{{ $errors->first('foto') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         {{-- <button class="btn btn-light">Cancel</button> --}}

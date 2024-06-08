@@ -124,7 +124,10 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // return $request;
         $transaksi = Transaksi::where('id', $id)->first();
+        $count = Transaksi::where('no_pol',$request['nopol'])->count() + 1;
+
         // $transaksi->no_pol = $request['nopol'];
         $transaksi->jenis_bbm = $request['bbm'];
         $transaksi->nama_pemohon = $request['nama'];
@@ -132,6 +135,16 @@ class TransaksiController extends Controller
         $transaksi->tanggal = $request['tanggal'];
         $transaksi->jumlah_liter = $request['jumlah'];
         $transaksi->jumlah_nominal= $request['jumlah_nominal'];
+        $transaksi->status= 'proses';
+
+        if(!empty($request->file('foto'))){
+            $transaksi->bukti_pembayaran = 'buktiFoto-'.time().$transaksi->no_pol.$count.'.png';
+            $file = $request->file('foto');
+            $currentFileName = $transaksi->bukti_pembayaran;
+            $newFileName =  'buktiFoto-'.time().$transaksi->no_pol.$count.'.png';
+            $file->move(public_path().'/buktiTransaksi', $newFileName);
+            $transaksi->bukti_pembayaran = $newFileName;
+        }
         $transaksi->update();
 
         return redirect('/transaksi');

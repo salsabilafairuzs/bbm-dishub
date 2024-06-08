@@ -18,7 +18,7 @@
                             <th>Nama Kendaraan</th>
                             <th>Nomor Polisi</th>
                             <th>Max Pengisian</th>
-                            <th>Jenis BBM</th>
+                            {{-- <th>Jenis BBM</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -30,7 +30,7 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->no_pol }}</td>
                             <td>{{ $item->max_pengisian }}</td>
-                            <td>{{ $item->jenis_bbm }}</td>
+                            {{-- <td>{{ $item->jenis_bbm }}</td> --}}
                             <td>
                               <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('kendaraan/'.$item->id.'/edit')}}"><i class="fas fa-edit"></i></i></a>
                               <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('kendaraan-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
@@ -45,5 +45,3 @@
       </div>
     </div>
 @endsection
-
-

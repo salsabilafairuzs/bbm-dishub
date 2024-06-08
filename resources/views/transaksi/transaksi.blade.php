@@ -137,9 +137,9 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">Close</button>
                     @role(['bendahara'])
-                        <input name="acc" value="Acc" onclick="accc()" class="btn btn-success text-white" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
-                        <input name="revisi" value="Revisi" onclick="revisii()" class="btn btn-warning" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
-                        <input name="tolak" value="Tolak" onclick="tolakk()" class="btn btn-danger" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
+                        <input type="submit" name="acc" value="Acc" class="btn btn-success text-white" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
+                        <input type="submit" name="revisi" value="Revisi" class="btn btn-warning" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
+                        <input type="submit" name="tolak" value="Tolak" class="btn btn-danger" style="width: 80px; height: 38px; padding: 6px 12px;" readonly>
                     @endrole
               </div>
             </div>
