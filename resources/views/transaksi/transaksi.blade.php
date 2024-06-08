@@ -34,7 +34,7 @@
                             <td>{{ valid_date_tanggal($item->tanggal) }}</td>
                             <td>{{ $item->jumlah_nominal }}</td>
                             <td><img src="{{ asset('buktiTransaksi/' . $item->bukti_pembayaran) }}" style="border-radius: 6px;" width="90px" height="78%"></td>
-                            <td>
+                            <td class="text-center">
                                     @if ($item->status == 'proses')
                                         <span class="badge badge-sm badge-primary">Diproses</span>
                                     @elseif($item->status == 'acc')
@@ -45,7 +45,7 @@
                                         <span class="badge badge-sm badge-danger">Di tolak</span>
                                     @endif
                             </td>
-                            <td>
+                            <td class="text-center">
                                 <a class="btn btn-warning btn-sm" style="border-radius:4px;" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
                                 @if ($item->status == 'revisi')
                                     @role(['admin','superadmin'])

@@ -37,7 +37,7 @@
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item['roles'][0]->name }}</td>
                                     {{-- <td class="text-center"><a href="{{ url('edit-user',$item->id) }}" class="btn btn-sm btn-primary">Edit</a></td> --}}
-                                    <td>
+                                    <td class="text-center">
                                       <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('edit-user',$item->id) }}"><i class="fas fa-edit"></i></a>
                                       <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('user-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
                                     </td>

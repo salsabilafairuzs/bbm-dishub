@@ -49,15 +49,11 @@ class UserSeeder extends Seeder
         $bus->save();
 
         $roda2 = new JenisKendaraan();
-        $roda2->jenis_kendaraan = StrToUpper('roda2');
+        $roda2->jenis_kendaraan = StrToUpper('roda 2');
         $roda2->save();
 
         $roda4 = new JenisKendaraan();
-        $roda4->jenis_kendaraan = StrToUpper('roda4');
+        $roda4->jenis_kendaraan = StrToUpper('roda 4');
         $roda4->save();
-
-        $perlengkapan = new JenisKendaraan();
-        $perlengkapan->jenis_kendaraan = StrToUpper('perlengkapan');
-        $perlengkapan->save();
     }
 }

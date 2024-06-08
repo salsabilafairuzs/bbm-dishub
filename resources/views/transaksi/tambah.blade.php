@@ -117,7 +117,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         {{-- <button class="btn btn-light">Cancel</button> --}}
-                        <a href="/transaksi1" class="btn btn-light">Cancel</a>
+                        <a href="/transaksi" class="btn btn-light">Cancel</a>
                         </div>
                     </form>
                     </div>

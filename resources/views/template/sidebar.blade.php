@@ -54,7 +54,7 @@
 
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#history" aria-expanded="false" aria-controls="history">
-          <i class="icon-head menu-icon"></i>
+          <i class="fas fa-history" style="margin-right:17px;"></i>
           <span class="menu-title">History</span>
           <i class="menu-arrow"></i>
         </a>
@@ -75,9 +75,9 @@
         </a>
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/change-password">Ubah Password</a></li>
+            <li class="nav-item"> <a class="nav-link" h
             @role(['superadmin'])
-                <li class="nav-item"> <a class="nav-link" href="/manajemen-user">Management User</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/manajemen-user">User Management</a></li>
             @endrole
           </ul>
         </div>

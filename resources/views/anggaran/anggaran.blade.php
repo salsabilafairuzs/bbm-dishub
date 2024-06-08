@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-lg" style="background-color:coral">
+                <div class="card shadow-lg" style="background-color:indianred">
                     <div class="card-body">
                         <div class="row">
                             <h1 class="card-title" style="margin-left:20px; color:white;">Saldo</h1>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-lg" style="background-color:royalblue;">
+                <div class="card shadow-lg" style="background-color:darkslateblue">
                     <div class="card-body">
                         <div class="row">
                             <h1 class="card-title" style="margin-left:20px; color:white;">Total Anggaran</h1>

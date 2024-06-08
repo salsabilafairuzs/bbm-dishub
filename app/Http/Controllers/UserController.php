@@ -90,7 +90,7 @@ class UserController extends Controller
     }
 
     public function destroy($id){
-        if ($id == Auth::user()->id) {kz
+        if ($id == Auth::user()->id) {
             return redirect('manajemen-user')->with('error', 'Gagal menghapus data!');
         } else {
             $admin = User::where('id', $id)->delete();

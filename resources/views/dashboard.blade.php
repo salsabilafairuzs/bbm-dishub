@@ -37,19 +37,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Bar chart</h4>
-                <canvas id="barChart"></canvas>
-              </div>
-            </div>
-          </div>
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title mb-0">History Transaksi</p>
+                  <p class="card-title mb-15">History Transaksi</p>
                   <div class="table-responsive">
                     <table class="table table-striped table-borderless">
                       <thead>
