@@ -75,7 +75,7 @@
         </a>
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" h
+            <li class="nav-item"> <a class="nav-link" href="/change-password">Ubah Password</a>
             @role(['superadmin'])
                 <li class="nav-item"> <a class="nav-link" href="/manajemen-user">User Management</a></li>
             @endrole

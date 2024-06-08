@@ -1,6 +1,6 @@
 <div class="main-panel">
     @yield('konten')
-    
+
 </div>
     </div>
     <!-- content-wrapper ends -->
