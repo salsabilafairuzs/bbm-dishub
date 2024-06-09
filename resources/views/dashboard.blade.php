@@ -46,7 +46,8 @@
                     <table class="table table-striped table-borderless">
                       <thead>
                         <tr>
-                          <th>No polisi</th>
+                          <th>Jenis Kendaraan</th>
+                          <th>Nomor Polisi</th>
                           <th>Jenis BBM</th>
                           <th>Tanggal</th>
                           <th>Status</th>
@@ -56,6 +57,7 @@
                         @isset($transaksi)
                             @foreach ($transaksi as $item)
                                 <tr>
+                                    <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
                                     <td>{{ $item->no_pol }}</td>
                                     <td class="font-weight-bold">{{ $item->jenis_bbm }}</td>
                                     <td>{{ $item->tanggal }}</td>
