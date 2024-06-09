@@ -29,7 +29,7 @@
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
             <img src="/backend/images/dishub.png" alt="profile" class="mr-2" />
           </a>
-          
+
           <p class="text-dark ms-2">{{ Auth::user()->name }}</p>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <form method="POST" action="{{ route('logout') }}">
@@ -40,6 +40,9 @@
                 <i class="ti-layout-sidebar-left"></i> Logout
             </a>
           </form>
+          <a href="{{ route('profil.index') }}">
+                <i class="ti-layout-sidebar-left"></i> Profil
+            </a>
           </div>
         </li>
         <!-- <li class="nav-item nav-settings d-none d-lg-flex">
