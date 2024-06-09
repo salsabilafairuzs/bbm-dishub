@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +47,13 @@ class UserController extends Controller
             $user->password = bcrypt($request['password']);
             $user->save();
             $user->addRole($request['roles']);
+
+            $profile = new Profil();
+            $profile->nama_profil = $request['name'];
+            $profile->email = $request['email'];
+            $profile->email = $request['email'];
+            $profile->save();
+
         }
         return redirect('/manajemen-user');
     }

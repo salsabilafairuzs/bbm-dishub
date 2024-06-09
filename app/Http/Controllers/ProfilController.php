@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
 {
@@ -12,7 +13,10 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        $data['profil'] = Profil::get();
+        // return Auth::user()->email;
+        $data['profil'] = Profil::where('email',Auth::user()->email)->first();
+        // return $data;
+
         return view('profil.profil',$data);
     }
 
@@ -51,9 +55,28 @@ class ProfilController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // return $request;
+        $profil = Profil::where('id',$id)->first();
+        $profil->nama_profil = $request['name'];
+        if (!empty($request->file('foto'))) {
+            if (!empty($profil->foto_profil)) {
+                // Hapus foto lama
+                $oldFilePath = public_path().'/backend/images/profil/'.$profil->foto_profil;
+                if (file_exists($oldFilePath)) {
+                    unlink($oldFilePath);
+                }
+            }
+
+            // $transaksi->bukti_pembayaran = 'buktiFoto-'.time().$transaksi->no_pol.$count.'.png';
+            $file = $request->file('foto');
+            $newFileName =  'profil-'.time().$profil->nama_profil.'.png';
+            $file->move(public_path().'/backend/images/profil', $newFileName);
+            $profil->foto_profil = $newFileName;
+        }
+        $profil->update();
+        return redirect('profil');
     }
 
     /**

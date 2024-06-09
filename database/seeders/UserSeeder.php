@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Profil;
 use App\Models\JenisKendaraan;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -37,12 +38,22 @@ class UserSeeder extends Seeder
         $user->save();
         $user->addRole($AdminRole);
 
+        $profiluser = new Profil();
+        $profiluser->nama_profil = 'administrator';
+        $profiluser->email = 'administrator@mail.com';
+        $profiluser->save();
+
         $superadmin = new User();
         $superadmin->name = 'superadmin';
         $superadmin->email = 'superadmin@mail.com';
         $superadmin->password = bcrypt('123123');
         $superadmin->save();
         $superadmin->addRole($SuperAdminRole);
+
+        $superadminprofil = new Profil();
+        $superadminprofil->nama_profil = 'superadmin';
+        $superadminprofil->email = 'superadmin@mail.com';
+        $superadminprofil->save();
 
         $bus = new JenisKendaraan();
         $bus->jenis_kendaraan = StrToUpper('bus & elf');
