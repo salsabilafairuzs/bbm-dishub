@@ -25,7 +25,7 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -47,9 +47,11 @@ class ProfilController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $data['profil'] = Profil::where('id',$id)->first();
+
+        return view('profil.edit',$data);
     }
 
     /**
