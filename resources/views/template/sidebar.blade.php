@@ -28,14 +28,14 @@
       </li>
       @endrole
 
-      @role(['bendahara'])
+      {{-- @role(['bendahara'])
       <li class="nav-item">
         <a class="nav-link" href="/anggaran">
           <i class="fas fa-wallet" style="margin-right:18px;"></i>
           <span class="menu-title">Anggaran</span>
         </a>
       </li>
-      @endrole
+      @endrole --}}
 
 
       <li class="nav-item">

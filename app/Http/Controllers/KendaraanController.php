@@ -59,7 +59,6 @@ class KendaraanController extends Controller
             $kendaraan->name = ucwords($request['name']);
             $kendaraan->no_pol = $request['no_pol'];
             $kendaraan->max_pengisian = $request['max_isi'];
-            $kendaraan->jenis_bbm = $request['jenis_bbm'];
             $kendaraan->save();
         }
         return redirect('/kendaraan');
@@ -114,7 +113,6 @@ class KendaraanController extends Controller
             $kendaraan->name = ucwords($request['name']);
             $kendaraan->no_pol = $request['no_pol'];
             $kendaraan->max_pengisian = $request['max_isi'];
-            $kendaraan->jenis_bbm = $request['jenis_bbm'];
             $kendaraan->update();
         }
         return redirect('/kendaraan');

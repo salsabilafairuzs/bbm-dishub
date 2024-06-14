@@ -27,7 +27,7 @@
     <table class="tabel" style="width: 100%; margin-left: 10px;">
         <tr>
             <td class="text-center" style="width:30%; font-weight: bold;">
-                {{-- <img src="{{ asset('backend/images/dishub.png') }}" style="width: 50px; margin-top: 20px; float: left;"> --}}
+                <img src="{{ asset('backend/images/pemda.png') }}" style="width: 50px; margin-top: 20px; float: left;">
             </td>
             <td style="width:30%;">
 
@@ -40,12 +40,12 @@
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
             <h5 class="text-center">Perusahaan Umum Daerah Aneka Usaha</h5>
-            <p class="text-center">Jl. A. Yani No.11, Pangongangan, <br> Kec. Manguharjo, Kota Madiun, Jawa Timur 63121</p>
+            <p class="text-center">Jl Jend A Yani No.11 Madiun, 63121, Telepon (0351) 452550 <br>Email : pdau.madiun@gmail.com </p>
 
             <hr>
         </div>
         <div class="col-sm-12 text-center">
-            <h4>Laporan Riwayat Transaksi</h4>
+            <h4>Rekap Tagihan BBM Dinas Perhubungan Kota Madiun</h4>
         </div>
         <br><br>
         <table class="table table-responsive">
@@ -84,7 +84,7 @@
             <tfoot>
                 <tr>
                     <th class="text-right" colspan="5">
-                        pengeluaran Pertamax
+                        Pengeluaran Pertamax
                     </th>
                     <th class="text-right">
                         {{ $pertamax }} Liter
@@ -92,7 +92,7 @@
                 </tr>
                 <tr>
                     <th class="text-right" colspan="5">
-                        pengeluaran Dexlite
+                        Pengeluaran Dexlite
                     </th>
                     <th class="text-right">
                         {{ $dexlite }} Liter

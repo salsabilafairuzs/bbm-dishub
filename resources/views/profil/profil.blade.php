@@ -26,13 +26,13 @@
                                 <form>
                                     @csrf @method('PATCH')
                                   <div class="form-group row">
-                                      <label for="" class="mt-3">Email :</label>
+                                      <label for="" class="mt-3">Nama :</label>
                                     <div class="col-8">
                                       <input name="name" placeholder="Nama" value="{{ $profil->nama_profil }}" class="form-control here" type="text">
                                     </div>
                                   </div>
                                     <div class="form-group row">
-                                        <label for="" class="mt-3">nama :</label>
+                                        <label for="" class="mt-3">Email :</label>
                                         <div class="col-8">
                                         <input id="lastname" name="lastname" value="{{ $profil->email }}" readonly placeholder="Last Name" class="form-control here" type="text">
                                         </div>
