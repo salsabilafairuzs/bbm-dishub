@@ -28,7 +28,7 @@
                                   <div class="form-group row">
                                       <label for="" class="mt-3">Nama :</label>
                                     <div class="col-8">
-                                      <input name="name" placeholder="Nama" value="{{ $profil->nama_profil }}" class="form-control here" type="text">
+                                      <input name="name" placeholder="Nama" value="{{ $profil->nama_profil }}" readonly placeholder="Nama" class="form-control here" type="text">
                                     </div>
                                   </div>
                                     <div class="form-group row">
