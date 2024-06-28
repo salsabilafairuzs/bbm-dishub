@@ -62,12 +62,12 @@
 
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
-            <div class="text-center">
-                <img src="{{ asset('backend/images/dishub.png') }}" width="20%" height="10%" alt="logo">
+            <div class="text-center mb-4">
+                <img src="{{ asset('backend/images/dishub-logo.png') }}" width="70%" height="70%" alt="logo">
               </div>
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
 
-              <h4 class="font-weight-bold text-center">Silahkan Login</h4>
+              <h4 class="font-weight-bold text-center" style="font-size: 20px">Silahkan Login</h4>
 
               <form class="pt-3" method="POST" action="{{ route('login') }}">
                 @csrf

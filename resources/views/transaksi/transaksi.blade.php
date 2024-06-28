@@ -38,11 +38,11 @@
                                     @if ($item->status == 'proses')
                                         <span class="badge badge-sm badge-primary">Diproses</span>
                                     @elseif($item->status == 'acc')
-                                        <span class="badge badge-sm badge-success">Acc</span>
+                                        <span class="badge badge-sm badge-success">ACC</span>
                                     @elseif($item->status == 'revisi')
                                         <span class="badge badge-sm badge-warning">Revisi</span>
                                     @else
-                                        <span class="badge badge-sm badge-danger">Di tolak</span>
+                                        <span class="badge badge-sm badge-danger">Ditolak</span>
                                     @endif
                             </td>
                             <td class="text-center">
@@ -112,7 +112,7 @@
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="">Jumlah Liter</label>
+                    <label for="">Jumlah Nominal</label>
                     <input type="text" readonly class="form-control" name="jumlah">
                   </div>
 

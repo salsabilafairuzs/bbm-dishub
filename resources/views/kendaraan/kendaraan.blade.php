@@ -17,7 +17,7 @@
                             <th>Jenis Kendaraan</th>
                             <th>Nama Kendaraan</th>
                             <th>Nomor Polisi</th>
-                            <th>Max Pengisian</th>
+                            <th>Max 1x Permintaan</th>
                             {{-- <th>Jenis BBM</th> --}}
                             <th>Aksi</th>
                         </tr>
