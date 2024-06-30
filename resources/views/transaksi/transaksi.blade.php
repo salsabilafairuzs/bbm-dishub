@@ -127,8 +127,7 @@
 
                                 Swal.fire({
                                   icon: "error",
-                                  title: "Oops...",
-                                  text: "Alasan tidak boleh kosong",
+                                  title: "Alasan tidak boleh kosong!!",
                                 });
                               </script>
                             @endsection
@@ -142,7 +141,7 @@
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                      <img id="gambarBukti" width="50%" alt="">
+                      <img id="gambarBukti" width="60%" alt="">
                     </div>
                   </div>
 
