@@ -3,43 +3,49 @@
     <div class="content-wrapper">
         <div class="card shadow-lg">
             <div class="card-body">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="row">
-                <h4 class="card-title" style="margin-left:20px">Data Transaksi Bus & Elf</h4>
+                <h4 class="card-title" style="margin-left:20px">Data User</h4>
                     <div class="col-md-12">
-                      <a href="{{url('/transaksi1/create')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
+                      <a href="{{url('/tambah-user')}}" class="btn btn-primary btn-md" style="margin-right:40px; margin-top:5px; margin-bottom:10px; padding:10px; border-radius:7px;"><i class="fas fa-plus" style="margin-right:10px;"></i>Tambah</a>
                       {{-- <a class="btn btn-primary btn-md" onclick="modalTambah()" style="margin-right:40px; margin-top:5px; margin-bottom:10px;">Tambah</a> --}}
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nomor Polisi</th>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>No Seri Kupon</th>
-                                <th>Jumlah</th>
-                                <th>Foto</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($transaksi1 as $item)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->no_pol }}</td>
-                            <td>{{ $item->nama_pemohon }}</td>
-                            <td>{{ $item->tanggal }}</td>
-                            <td>{{ $item->no_seri_kupon}}</td>
-                            <td>{{ $item->jumlah_nominal }}</td>
-                            <td><img src="{{ asset('buktiTransaksi1/' . $item->bukti_pembayaran) }}" style="border-radius: 6px;" width="90px" height="78%"></td>
-                            <td>
-                                <a class="btn btn-warning btn-sm" style="border-radius:4px;" onclick="detailForm({{ $item->id }})"><i class="fas fa-info"></i></a>
-                                <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('transaksi1/'.$item->id.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn btn-danger btn-sm" style="border-radius:4px;" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('transaksi1-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($user as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item['roles'][0]->name }}</td>
+                                    {{-- <td class="text-center"><a href="{{ url('edit-user',$item->id) }}" class="btn btn-sm btn-primary">Edit</a></td> --}}
+                                    <td class="text-center">
+                                      <a class="btn btn-success btn-sm" style="border-radius:4px;" href="{{ url('edit-user',$item->id) }}"><i class="fas fa-edit"></i></a>
+                                      <a class="btn btn-danger btn-sm" style="border-radius:4px;"  onclick="return confirm('Apakah anda yakin ingin menghapusnya?')?true:false" href="{{ url('user-hapus/'.$item->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                  </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -100,7 +106,7 @@
                 {{-- <button type="button" class="btn btn-primary">Understood</button> --}}
               </div>
             </div>
-          
+
           </div>
         </div>
       </div>
@@ -117,8 +123,8 @@
     function detailForm(id) {
             $('#modal').modal('show')
             $('.modal-title').text('Detail Transaksi')
-            $.ajax({  
-                url: '/detail-transaksi1/'+id+'/show', 
+            $.ajax({
+                url: '/detail-transaksi/'+id+'/show',
                 type: 'GET',
                 dataType: 'json',
             })

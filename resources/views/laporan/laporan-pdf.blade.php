@@ -30,7 +30,7 @@
                 <img src="{{ asset('backend/images/dishub.png') }}" style="width: 50px; margin-top: 20px; float: left;">
             </td>
             <td style="width:30%;">
-                
+
             </td>
         </tr>
     </table>
@@ -52,10 +52,11 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nomor Polisi</th>
-                    <th>Nama</th>
+                    <th>Jenis Kendaraan</th>
                     <th>Tanggal</th>
+                    <th>Nopol</th>
                     <th>Jenis BBM</th>
+                    <th>Jumlah Liter</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -67,10 +68,11 @@
                     @foreach ($transaksi as $item)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        <td>{{ $item['jenisKendaraan']->jenis_kendaraan}}</td>
+                        <td>{{ valid_date_tanggal($item->tanggal) }}</td>
                         <td>{{ $item->no_pol }}</td>
-                        <td>{{ $item->nama_pemohon }}</td>
-                        <td>{{ $item->tanggal}}</td>
                         <td>{{ $item->jenis_bbm }}</td>
+                        <td>{{ $item->jumlah_liter }}</td>
                         <td style="float:right;">{{ $item->jumlah_nominal }}</td>
                     </tr>
                     @endforeach
@@ -92,6 +94,35 @@
                 </tr>
             </tfoot>
         </table>
+
+        {{-- <table class="table table-responsive">
+            <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @isset($transaksi)
+                @php
+                $counter = 0;
+            @endphp
+
+            @foreach ($transaksi as $itemm)
+                @if ($counter % 3 == 0)
+                    <tr>
+                @endif
+
+                <td><img src="{{ asset('buktiTransaksi/'.$itemm->bukti_pembayaran) }}" alt=""></td>
+
+                @if ($counter % 3 == 2 || $loop->last)
+                    </tr>
+                @endif
+
+                @php
+                    $counter++;
+                @endphp
+            @endforeach
+                @endisset
+            </tbody>
+        </table> --}}
     </div>
   </body>
 </html>

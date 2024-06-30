@@ -36,18 +36,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Nomor Polisi</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="no_pol" value="{{ old('no_pol') }}"/>
-                                    @if ($errors->has('no_pol'))
-                                        <span class="text-danger">{{ $errors->first('no_pol') }}</span>
-                                    @endif
-                                </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Nomor Polisi</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="no_pol" value="{{ old('no_pol') }}"/>
+                                        @if ($errors->has('no_pol'))
+                                            <span class="text-danger">{{ $errors->first('no_pol') }}</span>
+                                        @endif
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -60,22 +62,22 @@
                                 </div>
                                 </div>
                             </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Jenis BBM</label>
                             <div class="col-sm-9">
                                 <select name="jenis_bbm" class="form-control">
                                     <option value="Pertamax">Pertamax</option>
                                     <option value="Dexlite">Dexlite</option>
-                                </select>
+                                </select> --}}
                                 {{-- <input type="text" class="form-control" name="jenis_bbm"/> --}}
+                            {{-- </div>
                             </div>
-                            </div>
-                        </div>
+                        </div> --}}
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         {{-- <button class="btn btn-light">Cancel</button> --}}
-                        <a href="/bus" class="btn btn-light">Cancel</a>
+                        <a href="/kendaraan" class="btn btn-light">Cancel</a>
                     </form>
                     </div>
         </div>

@@ -1,79 +1,123 @@
 @extends('template.template')
 @section('konten')
-    <div class="content-wrapper">
-      <div class="row">
-        <div class="col-md-12 grid-margin">
-          <div class="row">
-            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-              <h3 class="font-weight-bold">Welcome Admin!</h3>
-              <!-- <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
-          <div class="card position-relative">
-            <div class="card-body shadow-lg">
-              <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
-                        <div class="ml-xl-4 mt-3">
-                        <p class="card-title">Total Kendaraan</p>
-                          <h1 class="text-primary">{{ $kendaraan }}</h1>
-                          <p class="mb-1 mb-xl-0">Total Inventaris Kendaraan Dinas</p>
-                        </div>  
-                        </div>
-                      <div class="col-md-12 col-xl-9">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="table-responsive mb-3 mb-md-0 mt-3">
-                              <table class="table table-borderless report-table">
-                                <tr>
-                                  <td class="text-muted">Bus & Elf</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $bus }}%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">{{ $bus }}</h5></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-muted">Roda 4</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $roda4 }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">{{ $roda4 }}</h5></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-muted">Roda 2</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-info" role="progressbar" style="width: {{ $roda2 }}%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">{{ $roda2 }}</h5></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-muted">Perlengkapan</td>
-                                  <td class="w-100 px-0">
-                                    <div class="progress progress-md mx-4">
-                                      <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $perlengkapan }}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </td>
-                                  <td><h5 class="font-weight-bold mb-0">{{ $perlengkapan }}</h5></td>
-                                </tr>
-                              </table>
-                            </div>
-                          </div>
-                        </div>
+      <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin transparent" style="margin-bottom:10px;a">
+              <div class="row">
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-4" style="font-size: 24px;">Revisi</p>
+                      <p class="mb-2" style="font-size: 50px; margin-top: 30px;">{{ $revisi }}</p>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-4" style="font-size: 24px;">ACC</p>
+                      <p class="mb-2" style="font-size: 50px; margin-top: 30px;">{{ $acc }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-light-danger">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-4" style="font-size: 24px;">Tolak</p>
+                      <p class="mb-2" style="font-size: 50px; margin-top: 30px;">{{ $tolak }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title mb-15">History Transaksi</p>
+                  <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                      <thead>
+                        <tr>
+                          <th>Jenis Kendaraan</th>
+                          <th>Nomor Polisi</th>
+                          <th>Jenis BBM</th>
+                          <th>Tanggal</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @isset($transaksi)
+                            @foreach ($transaksi as $item)
+                                <tr>
+                                    <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
+                                    <td>{{ $item->no_pol }}</td>
+                                    <td class="font-weight-bold">{{ $item->jenis_bbm }}</td>
+                                    <td>{{ $item->tanggal }}</td>
+                                    @if ($item->status == 'acc')
+                                        <td class="font-weight-medium"><div class="badge badge-success">Acc</div></td>
+                                    @elseif($item->status == 'revisi')
+                                        <td class="font-weight-medium"><div class="badge badge-warning">Revisi</div></td>
+                                    @elseif($item->status == 'ditolak')
+                                        <td class="font-weight-medium"><div class="badge badge-warning">Tolak</div></td>
+                                    @else
+                                        <td class="font-weight-medium"><div class="badge badge-primary">Proses</div></td>
+                                    @endif
+                                </tr>
+                            @endforeach
+                        @endisset
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </div>
+    </div>
+@endsection
+@section('script')
+ <script>
+     var dataku = {
+    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+    datasets: [{
+      label: '# of Votes',
+      data: [10, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+
+     var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    // This will get the first returned node in the jQuery collection.
+    var barChart = new Chart(barChartCanvass, {
+      type: 'bar',
+      data: datakuk,
+      options: optionss
+    });
+</script>
 @endsection

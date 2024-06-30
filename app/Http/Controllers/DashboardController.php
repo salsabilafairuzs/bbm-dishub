@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kendaraan;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,6 +18,10 @@ class DashboardController extends Controller
         $data['roda2'] = Kendaraan::where('jenis_id',2)->count();
         $data['roda4'] = Kendaraan::where('jenis_id',3)->count();
         $data['perlengkapan'] = Kendaraan::where('jenis_id',4)->count();
+        $data['transaksi'] = Transaksi::limit(7)->get();
+        $data['acc'] = Transaksi::where('status','acc')->count();
+        $data['revisi'] = Transaksi::where('status','revisi')->count();
+        $data['tolak'] = Transaksi::where('status','ditolak')->count();
         return view('dashboard',$data);
     }
 
