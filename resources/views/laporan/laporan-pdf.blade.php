@@ -39,15 +39,15 @@
     <div class="row">
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
-            <h5 class="text-center">Dishub kota Madiun</h5>
+            <h3 class="text-center">Dishub kota Madiun</h3>
             <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo,  <br> Kec. Manguharjo, Kota Madiun, Jawa Timur</p>
 
             <hr>
         </div>
         <div class="col-sm-12 text-center">
-            <h4>Laporan Riwayat Transaksi</h4>
+            <h5>Laporan Riwayat Transaksi</h5>
         </div>
-        <br><br>
+        <br>
         <table class="table table-responsive">
             <thead>
                 <tr>
