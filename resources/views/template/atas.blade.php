@@ -32,17 +32,19 @@
 
           <p class="text-dark ms-2">{{ Auth::user()->name }}</p>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+            <a href="{{ route('profil.index') }}">
+              <i class="ti-layout-sidebar-left"></i> Profil
+          </a>
+
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
             this.closest('form').submit();">
                 <i class="ti-layout-sidebar-left"></i> Logout
             </a>
           </form>
-          <a href="{{ route('profil.index') }}">
-                <i class="ti-layout-sidebar-left"></i> Profil
-            </a>
+
+          
           </div>
         </li>
         <!-- <li class="nav-item nav-settings d-none d-lg-flex">

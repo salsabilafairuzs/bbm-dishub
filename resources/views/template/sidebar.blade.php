@@ -8,7 +8,7 @@
       </li>
       @role(['superadmin','admin'])
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false">
           <i class="icon-layout menu-icon"></i>
           <span class="menu-title">Data Master</span>
           <i class="menu-arrow"></i>

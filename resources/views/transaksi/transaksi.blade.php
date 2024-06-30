@@ -120,6 +120,14 @@
                     <label for="">Alasan</label>
                     @if (Auth::user()->roles()->first()->name == 'bendahara')
                         <input type="text" class="form-control" name="alasan" id="alasan" value="-">
+                        @if ($errors->has('alasan'))
+                            @section('scriptt')
+                              <script>
+                                detailForm({{ old('id') }})
+                              </script>
+                            @endsection
+                            <div class="alert alert-danger">{{ $errors->first('alasan') }}</div>
+                        @endif
                     @else
                         <input type="text" required class="form-control" name="alasan" disabled>
                     @endif

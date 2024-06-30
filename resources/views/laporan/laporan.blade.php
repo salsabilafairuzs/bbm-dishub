@@ -20,36 +20,43 @@
                     </select>
                 </div>
 
+                {{-- @if()
+
+                @elseif()
+
+                @else
+
+                @endif --}}
                 <div class="col-md-3" id="bulan">
                     <select name="bulan" class="custom-select" style="margin-top:28px;">
-                            <option value="01">Januari</option>
-                            <option value="02">Februari</option>
-                            <option value="03">Maret</option>
-                            <option value="04">April</option>
-                            <option value="05">Mei</option>
-                            <option value="06">Juni</option>
-                            <option value="07">Juli</option>
-                            <option value="08">Agustus</option>
-                            <option value="09">September</option>
-                            <option value="10">Oktober</option>
-                            <option value="11">November</option>
-                            <option value="12">Desember</option>
+                            <option value="01" @isset($_POST['filter']) @if($_POST['bulan'] == '01') selected @endif @endisset>Januari</option>
+                            <option value="02" @isset($_POST['filter']) @if($_POST['bulan'] == '02') selected @endif @endisset>Februari</option>
+                            <option value="03" @isset($_POST['filter']) @if($_POST['bulan'] == '03') selected @endif @endisset>Maret</option>
+                            <option value="04" @isset($_POST['filter']) @if($_POST['bulan'] == '04') selected @endif @endisset>April</option>
+                            <option value="05" @isset($_POST['filter']) @if($_POST['bulan'] == '05') selected @endif @endisset>Mei</option>
+                            <option value="06" @isset($_POST['filter']) @if($_POST['bulan'] == '06') selected @endif @endisset>Juni</option>
+                            <option value="07" @isset($_POST['filter']) @if($_POST['bulan'] == '07') selected @endif @endisset>Juli</option>
+                            <option value="08" @isset($_POST['filter']) @if($_POST['bulan'] == '08') selected @endif @endisset>Agustus</option>
+                            <option value="09" @isset($_POST['filter']) @if($_POST['bulan'] == '09') selected @endif @endisset>September</option>
+                            <option value="10" @isset($_POST['filter']) @if($_POST['bulan'] == '10') selected @endif @endisset>Oktober</option>
+                            <option value="11" @isset($_POST['filter']) @if($_POST['bulan'] == '11') selected @endif @endisset>November</option>
+                            <option value="12" @isset($_POST['filter']) @if($_POST['bulan'] == '12') selected @endif @endisset>Desember</option>
                     </select>
                 </div>
 
                 <div class="col-md-3" id="tahun">
                     <select name="tahun" class="custom-select" style="margin-top:28px;">
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            <option value="2030">2030</option>
+                            <option value="2020" @isset($_POST['filter']) @if($_POST['tahun'] == '2020') selected @endif @endisset>2020</option>
+                            <option value="2021" @isset($_POST['filter']) @if($_POST['tahun'] == '2021') selected @endif @endisset>2021</option>
+                            <option value="2022" @isset($_POST['filter']) @if($_POST['tahun'] == '2022') selected @endif @endisset>2022</option>
+                            <option value="2023" @isset($_POST['filter']) @if($_POST['tahun'] == '2023') selected @endif @endisset>2023</option>
+                            <option value="2024" @isset($_POST['filter']) @if($_POST['tahun'] == '2024') selected @endif @endisset>2024</option>
+                            <option value="2025" @isset($_POST['filter']) @if($_POST['tahun'] == '2025') selected @endif @endisset>2025</option>
+                            <option value="2026" @isset($_POST['filter']) @if($_POST['tahun'] == '2026') selected @endif @endisset>2026</option>
+                            <option value="2027" @isset($_POST['filter']) @if($_POST['tahun'] == '2027') selected @endif @endisset>2027</option>
+                            <option value="2028" @isset($_POST['filter']) @if($_POST['tahun'] == '2028') selected @endif @endisset>2028</option>
+                            <option value="2029" @isset($_POST['filter']) @if($_POST['tahun'] == '2029') selected @endif @endisset>2029</option>
+                            <option value="2030" @isset($_POST['filter']) @if($_POST['tahun'] == '2030') selected @endif @endisset>2030</option>
                     </select>
                 </div>
             </div>
@@ -120,6 +127,9 @@
         $(document).ready(function() {
             $('#bulan').prop('hidden', true);
             $('#tahun').prop('hidden', true);
+
+            pilihFilter();
+
         })
 
         function pilihFilter(){

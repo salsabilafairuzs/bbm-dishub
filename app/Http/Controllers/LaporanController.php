@@ -93,9 +93,9 @@ class LaporanController extends Controller
 
             if($request['filter'] == 'all'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->where('status','acc')->orderBy('tanggal','ASC')->get();
-                $data['jumlah'] = Transaksi::sum('jumlah_nominal');
-                $data['dexlite'] = Transaksi::where('jenis_bbm','Dexlite')->sum('jumlah_liter');
-                $data['pertamax'] = Transaksi::where('jenis_bbm','Pertamax')->sum('jumlah_liter');
+                $data['jumlah'] = Transaksi::where('status','acc')->sum('jumlah_nominal');
+                $data['dexlite'] = Transaksi::where('status','acc')->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
+                $data['pertamax'] = Transaksi::where('status','acc')->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
                 // return $data;
                 $no = 1;
                 if(Auth::user()->roles()->first()->name == 'superadmin' || Auth::user()->roles()->first()->name == 'admin'){
@@ -108,9 +108,9 @@ class LaporanController extends Controller
 
             }else if($request['filter'] == 'bulan'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->where('status','acc')->orderBy('tanggal','ASC')->get();
-                $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->sum('jumlah_nominal');
-                $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
-                $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
+                $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('status','acc')->sum('jumlah_nominal');
+                $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('status','acc')->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
+                $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->where('status','acc')->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
 
                 $no = 1;
 
@@ -124,9 +124,9 @@ class LaporanController extends Controller
                 return $pdf->stream();
             }else if($request['filter'] == 'tahun'){
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
-                $data['jumlah'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->sum('jumlah_nominal');
-                $data['dexlite'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
-                $data['pertamax'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
+                $data['jumlah'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('status','acc')->sum('jumlah_nominal');
+                $data['dexlite'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('status','acc')->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
+                $data['pertamax'] = Transaksi::whereYear('tanggal',intval($request['tahun']))->where('status','acc')->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
 
                 $no = 1;
                 if(Auth::user()->roles()->first()->name == 'superadmin' || Auth::user()->roles()->first()->name == 'admin'){
@@ -140,9 +140,9 @@ class LaporanController extends Controller
             }
             else{
                 $data['transaksi'] = Transaksi::with('jenisKendaraan')->whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->orderBy('tanggal','ASC')->get();
-                $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->sum('jumlah_nominal');
-                $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Dexlite')->sum('jumlah_liter');
-                $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Pertamax')->sum('jumlah_liter');
+                $data['jumlah'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('status','acc')->sum('jumlah_nominal');
+                $data['dexlite'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Dexlite')->where('status','acc')->sum('jumlah_liter');
+                $data['pertamax'] = Transaksi::whereMonth('tanggal',$request['bulan'])->whereYear('tanggal',intval($request['tahun']))->where('jenis_bbm','Pertamax')->where('status','acc')->sum('jumlah_liter');
                 $no = 1;
                 if(Auth::user()->roles()->first()->name == 'superadmin' || Auth::user()->roles()->first()->name == 'admin'){
                     $pdf = PDF::loadView('laporan.laporan-pdf2', $data);
