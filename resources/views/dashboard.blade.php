@@ -62,11 +62,11 @@
                                     <td class="font-weight-bold">{{ $item->jenis_bbm }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     @if ($item->status == 'acc')
-                                        <td class="font-weight-medium"><div class="badge badge-success">Acc</div></td>
+                                        <td class="font-weight-medium"><div class="badge badge-success">ACC</div></td>
                                     @elseif($item->status == 'revisi')
                                         <td class="font-weight-medium"><div class="badge badge-warning">Revisi</div></td>
                                     @elseif($item->status == 'ditolak')
-                                        <td class="font-weight-medium"><div class="badge badge-warning">Tolak</div></td>
+                                        <td class="font-weight-medium"><div class="badge badge-danger">Tolak</div></td>
                                     @else
                                         <td class="font-weight-medium"><div class="badge badge-primary">Proses</div></td>
                                     @endif

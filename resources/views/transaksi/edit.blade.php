@@ -3,7 +3,7 @@
     <div class="content-wrapper">
     <div class="card shadow-lg">
         <div class="card-body">
-                    <h4 class="card-title">Transaksi Kendaraan</h4>
+                    <h4 class="card-title">Edit Transaksi Kendaraan</h4>
                     <form class="form-sample" action="{{url('transaksi/'.$transaksi->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PATCH')
                         <p class="card-description">

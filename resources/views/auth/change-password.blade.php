@@ -3,7 +3,7 @@
     <div class="content-wrapper">
         <div class="card shadow-lg">
             <div class="card-body">
-                <div class="row mb-3">
+                <div class="row">
                     <h1 class="card-title" style="margin-left: 20px;">Ubah Password</h1>
                 </div>
                 <form method="POST" class="form-horizontal" action="{{ url('/change-password')}}">
