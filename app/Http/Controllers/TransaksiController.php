@@ -177,17 +177,26 @@ class TransaksiController extends Controller
             $transaksi->update();
             return redirect('/transaksi');
         }elseif($request['revisi']){
-            $transaksi = Transaksi::where('id', $request['id'])->first();
-            $transaksi->alasan = $request['alasan'];
-            $transaksi->status = 'revisi';
-            $transaksi->update();
-            return redirect('/transaksi');
+            if($request['alasan'] == null || $request['alasan'] == ''){
+                return redirect()->back()->withInput()->withErrors(['alasan' => 'Alasan tidak boleh kosong.']);
+            }else{
+                $transaksi = Transaksi::where('id', $request['id'])->first();
+                $transaksi->alasan = $request['alasan'];
+                $transaksi->status = 'revisi';
+                $transaksi->update();
+                return redirect('/transaksi');
+            }
+            
         }else{
-            $transaksi = Transaksi::where('id', $request['id'])->first();
-            $transaksi->alasan = $request['alasan'];
-            $transaksi->status = 'ditolak';
-            $transaksi->update();
-            return redirect('/transaksi');
+            if($request['alasan'] == null || $request['alasan'] == ''){
+                return redirect()->back()->withInput()->withErrors(['alasan' => 'Alasan tidak boleh kosong.']);
+            }else{
+                $transaksi = Transaksi::where('id', $request['id'])->first();
+                $transaksi->alasan = $request['alasan'];
+                $transaksi->status = 'ditolak';
+                $transaksi->update();
+                return redirect('/transaksi');
+            }
         }
     }
 }

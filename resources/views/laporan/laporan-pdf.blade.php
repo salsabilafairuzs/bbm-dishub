@@ -73,7 +73,7 @@
                         <td>{{ $item->no_pol }}</td>
                         <td>{{ $item->jenis_bbm }}</td>
                         <td>{{ $item->jumlah_liter }}</td>
-                        <td style="float:right;">{{ $item->jumlah_nominal }}</td>
+                        <td style="float:right;" class="text-right">{{ $item->jumlah_nominal }}</td>
                     </tr>
                     @endforeach
                 @endisset
@@ -85,7 +85,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th class="text-right" colspan="5">
+                    <th class="text-right" colspan="6">
                         Total Pengeluaran (Rp)
                     </th>
                     <th class="text-right">

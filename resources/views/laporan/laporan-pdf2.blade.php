@@ -147,7 +147,7 @@
             <tfoot>
                 <tr>
                     <th class="text-right" colspan="">
-                        Madiun, .............
+                        Madiun, {{ date('d-m-Y') }}
                     </th>
                     <th></th>
                 </tr>
