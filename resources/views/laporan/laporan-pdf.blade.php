@@ -27,7 +27,7 @@
     <table class="tabel" style="width: 100%; margin-left: 10px;">
         <tr>
             <td class="text-center" style="width:30%; font-weight: bold;">
-                <img src="{{ asset('backend/images/dishub.png') }}" style="width: 50px; margin-top: 20px; float: left;">
+                <img src="{{ asset('backend/images/dishub.png') }}" style="width: 70px; margin-top: 20px; float: left;">
             </td>
             <td style="width:30%;">
 
@@ -40,7 +40,8 @@
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
             <h3 class="text-center">Dishub kota Madiun</h3>
-            <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo,  <br> Kec. Manguharjo, Kota Madiun, Jawa Timur</p>
+            <p class="text-center"></p>
+            <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo, 63127, Telepon (0351) 4472235 <br>Email : dishub@madiunkota.go.id </p>
 
             <hr>
         </div>

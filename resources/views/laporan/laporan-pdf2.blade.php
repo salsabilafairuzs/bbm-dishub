@@ -27,7 +27,7 @@
     <table class="tabel" style="width: 100%; margin-left: 10px;">
         <tr>
             <td class="text-center" style="width:30%; font-weight: bold;">
-                <img src="{{ asset('backend/images/pemda.png') }}" style="width: 50px; margin-top: 20px; float: left;">
+                <img src="{{ asset('backend/images/pemda.png') }}" style="width: 70px; margin-top: 20px; float: left;">
             </td>
             <td style="width:30%;">
 
