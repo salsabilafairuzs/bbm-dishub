@@ -124,9 +124,15 @@
                             @section('scriptt')
                               <script>
                                 detailForm({{ old('id') }})
+
+                                Swal.fire({
+                                  icon: "error",
+                                  title: "Oops...",
+                                  text: "Alasan tidak boleh kosong",
+                                });
                               </script>
                             @endsection
-                            <div class="alert alert-danger">{{ $errors->first('alasan') }}</div>
+                            {{-- <div class="alert alert-danger">{{ $errors->first('alasan') }}</div> --}}
                         @endif
                     @else
                         <input type="text" required class="form-control" name="alasan" disabled>
