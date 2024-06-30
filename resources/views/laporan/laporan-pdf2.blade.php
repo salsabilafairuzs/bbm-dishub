@@ -27,7 +27,7 @@
     <table class="tabel" style="width: 100%; margin-left: 10px;">
         <tr>
             <td class="text-center" style="width:30%; font-weight: bold;">
-                <img src="{{ asset('backend/images/pemda.png') }}" style="width: 50px; margin-top: 20px; float: left;">
+                <img src="{{ asset('backend/images/pemda.png') }}" style="width: 70px; margin-top: 20px; float: left;">
             </td>
             <td style="width:30%;">
 
@@ -39,15 +39,15 @@
     <div class="row">
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
-            <h5 class="text-center">Perusahaan Umum Daerah Aneka Usaha</h5>
+            <h3 class="text-center">Perusahaan Umum Daerah Aneka Usaha</h3>
             <p class="text-center">Jl Jend A Yani No.11 Madiun, 63121, Telepon (0351) 452550 <br>Email : pdau.madiun@gmail.com </p>
 
             <hr>
         </div>
         <div class="col-sm-12 text-center">
-            <h4>Rekap Tagihan BBM Dinas Perhubungan Kota Madiun</h4>
+            <h5>Rekap Tagihan BBM Dinas Perhubungan Kota Madiun</h5>
         </div>
-        <br><br>
+        <br>
         <table class="table table-responsive">
             <thead>
                 <tr>

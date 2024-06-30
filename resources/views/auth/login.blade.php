@@ -67,7 +67,7 @@
               </div>
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
 
-              <h4 class="font-weight-bold text-center" style="font-size: 20px">Silahkan Login</h4>
+              <h3 class="font-weight-bold text-center" style="font-size: 17px">Silahkan Login</h3>
 
               <form class="pt-3" method="POST" action="{{ route('login') }}">
                 @csrf
