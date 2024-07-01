@@ -59,7 +59,7 @@
                                 <tr>
                                     <td>{{ $item->jenisKendaraan->jenis_kendaraan }}</td>
                                     <td>{{ $item->no_pol }}</td>
-                                    <td class="font-weight-bold">{{ $item->jenis_bbm }}</td>
+                                    <td>{{ $item->jenis_bbm }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     @if ($item->status == 'acc')
                                         <td class="font-weight-medium"><div class="badge badge-success">ACC</div></td>
