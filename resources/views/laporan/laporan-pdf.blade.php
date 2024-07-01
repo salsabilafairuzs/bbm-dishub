@@ -39,9 +39,9 @@
     <div class="row">
         <div class="col-sm-12 text-left">
             {{-- <p>satu</p> --}}
-            <h3 class="text-center">Dishub kota Madiun</h3>
+            <h3 class="text-center">Dinas Perhubungan</h3>
             <p class="text-center"></p>
-            <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo, 63127, Telepon (0351) 4472235 <br>Email : dishub@madiunkota.go.id </p>
+            <p class="text-center">Jl. Hayam Wuruk No.62, Manguharjo, 63127 <br>Email : dishub@madiunkota.go.id </p>
 
             <hr>
         </div>
