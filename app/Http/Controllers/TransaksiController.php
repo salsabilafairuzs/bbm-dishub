@@ -18,9 +18,9 @@ class TransaksiController extends Controller
     public function index()
     {
         if(Auth::user()->roles()->first()->name == 'bendahara'){
-            $data['transaksi'] = Transaksi::where('status','proses')->with('jenisKendaraan')->get();
+            $data['transaksi'] = Transaksi::where('status','proses')->with('jenisKendaraan')->orderBy('created_at','DESC')->get();
         }else{
-            $data['transaksi'] = Transaksi::with('jenisKendaraan')->get();
+            $data['transaksi'] = Transaksi::with('jenisKendaraan')->orderBy('created_at','DESC')->get();
         }
 
         return view('transaksi.transaksi',$data);
