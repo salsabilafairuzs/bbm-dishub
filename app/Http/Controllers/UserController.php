@@ -70,11 +70,9 @@ class UserController extends Controller
         $cek = Validator::make($request->all(), [
             'name' => ['required'],
             'email' => ['required'],
-            'password' => ['required'],
         ],[
             'name.required' => 'name wajib di isi !',
             'email.required' => 'Email wajib di isi !',
-            'password.required' => 'Password wajib di isi !',
         ]);
 
         if ($cek->fails()) {
@@ -85,9 +83,9 @@ class UserController extends Controller
             $user = User::where('id',$id)->first();
             $user->name = $request['name'];
             $user->email = $request['email'];
-            $user->password = bcrypt($request['password']);
+            $user->password = !empty($request['password'] ? bcrypt($request['password']) : $user->password);
             $user->update();
-            $user->addRole($request['roles']);
+            $user->syncRoles([$request['roles']]);
         }
         return redirect('/manajemen-user');
     }

@@ -7,7 +7,7 @@
                     <div class="row">
                         <h4 class="card-title" style="margin-left:20px">Edit Data User</h4>
                         <div class="col-md-12">
-                            <form action="{{ url('update-user') }}" method="post">
+                            <form action="{{ url('update-user',$user->id) }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
