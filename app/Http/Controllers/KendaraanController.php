@@ -14,7 +14,7 @@ class KendaraanController extends Controller
      */
     public function index()
     {
-        $data['kendaraan'] = Kendaraan::with('jenisKendaraan')->get();
+        $data['kendaraan'] = Kendaraan::with('jenisKendaraan')->orderBy('created_at','DESC')->get();
         // return $data; die;
 
         return view('kendaraan.kendaraan',$data);
